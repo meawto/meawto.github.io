@@ -1,4 +1,4 @@
-# [meawto: home](https://meawuto.github.io/)
+# [meawto: home](https://meawto.github.io/)
 
 not available for mobile devices;
 
