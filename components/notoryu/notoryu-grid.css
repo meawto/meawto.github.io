@@ -1,0 +1,73 @@
+.notoryu-grid {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    width: 34rem;
+    height: 40rem;
+    border-radius: 0.4rem;
+    overflow: hidden;
+}
+
+.chat-info, .chat-data, .chat-input {
+    padding: 0.6rem 1rem;
+}
+
+.chat-info {
+    background-color: var(--window-v1);
+    display: flex;
+    flex-direction: row;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+}
+
+.user-info span:nth-child(1) {
+    color: var(--color-status);
+}
+
+.user-info span:nth-child(2) {
+    color: var(--color-sub-status);
+    font-size: 0.8rem;
+}
+
+.chat-info img {
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    object-fit: cover;
+    transform: scale(1.2);
+}
+
+.user-avatar {
+    margin-right: 0.6rem;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    
+}
+
+.chat-data {
+    background-color: var(--main-color1);
+    height: 100%;
+}
+
+
+/* BOTTOM */
+
+.chat-input {
+    background-color: var(--main-color0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chat-choices {
+    background-color: brown;
+    margin-right: 1rem;
+}
+
+/* .chat-input span {
+    background-color: chartreuse;
+} */

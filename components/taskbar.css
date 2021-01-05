@@ -1,0 +1,40 @@
+#os-taskbar {
+    backdrop-filter: blur(10px);
+    background-color: var(--taskbar-v1);
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin: 0 auto;
+    padding: 0.4rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: var(--second-font);
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 3;
+}
+
+.taskbar-apps, .taskbar-time, .taskbar-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tb-glow {
+    cursor: pointer;
+    display: flex;
+    color: var(--color-name);
+    opacity: 0.6;
+    transition: opacity 200ms;
+    align-items: center;
+}
+
+.tb-glow:hover {
+    opacity: 1;
+}
+
+.taskbar-info img {
+    width: 0.8rem;
+    height: 0.8rem;
+}

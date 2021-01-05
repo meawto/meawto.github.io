@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+
+/* IMPORTS */
+@import url("./grid.css");
+@import url("./dock.css");
+@import url("./taskbar.css");
+@import url("./desktop.css");
+@import url("./animation.css");
+@import url("./notoryu/notoryu-grid.css");
+
+
+/* vars */
+:root {
+    --main-color0: #131313;
+    --main-color1: #161616;
+    --main-color2: #1d1d1d;
+    --main-color3: #232323;
+    --main-color4: #272727;
+    --main-color5: #303030;
+    --main-color6: #3f3f3f;
+    --main-color7: #c2c2c2;
+    --main-color8: #eeeeee;
+    --main-font: 'Spartan', BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --second-font: 'Nunito', BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+    /* colors */
+    --dock-v1: rgba(63, 63, 63, 0.5);
+    --taskbar-v1: rgba(19, 19, 19, 0.2);
+    --dock-btn-v1: rgba(19, 19, 19, 0.4);
+    --window-v1: rgb(28, 28, 28);
+    --window-shadow-v1: rgba(19, 19, 19);
+
+
+    /* font color */
+    --color-name: rgb(190, 190, 190);
+    --color-status: rgb(160, 160, 160);
+    --color-sub-status: rgb(117, 117, 117);
+    /* size config */
+    font-size: 16px;
+}
+
+
+/* main tags */
+body {
+    font-family: var(--main-font);
+    color: var(--color-name);
+}
+
+html {
+    background-color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+    user-select: none;
+}
+
+/* 
+.noto-background {
+    background: var(--main-color0);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+button:active {
+    position: relative;
+    top: 0.2rem;
+}
+
+.tb-glow:active {
+    position: relative;
+    top: 0.1rem;
+}

@@ -1,0 +1,48 @@
+.window-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.window-controls span:nth-child(1) {
+    opacity: 0.6;
+    padding: 0.6rem 1rem;
+    display: block;
+    font-weight: 600;
+    align-items: center;
+    font-size: 0.9rem;
+    font-family: var(--second-font);
+}
+
+.window-controls span:nth-child(2) {
+    opacity: 0.6;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    display: block;
+    font-weight: 600;
+    align-items: center;
+    font-size: 0.9rem;
+    font-family: var(--second-font);
+}
+
+.window-controls span:nth-child(2):hover {
+    opacity: 1;
+}
+
+.os-window {
+    background-color: var(--window-v1);
+    width: max-content;
+    height: max-content;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    position: absolute;
+    transition: opacity 400ms, top 1s ease, filter 400ms, box-shadow 200ms;
+    opacity: 0;
+    padding: 0.2rem;
+    padding-top: 0;
+}
+
+#music-player iframe {
+    display: block;
+    border-radius: 0.4rem;
+}

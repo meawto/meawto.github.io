@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meaw</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&family=Spartan:wght@100;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- local css -->
+    <link rel="stylesheet" href="./components/root.css">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body>
+    
+    <div class="os-grid">
+
+        <div class="container-desktop">
+           
+            <div id="os-desktop">
+
+                <div id="os-taskbar">
+                    <div class="taskbar-apps">
+                        <span class="tb-glow">Iniciar</span>
+                    </div>
+                    <div class="taskbar-time">
+                        <span id="os-datetime" class="tb-glow">data aqui</span>
+                    </div>
+                    <div class="taskbar-info">
+                        <span class="tb-glow">
+                            <img src="./assets/icons/onoff.webp" alt="on off button">
+                        </span>
+                    </div>
+                </div>
+
+                <div id="music-player" class="os-window">
+                    <div class="window-controls">
+                        <span>Spotify</span>
+                        <span onclick="closeWindow('music-player')">fechar</span>
+                    </div>
+
+                    <iframe src="https://open.spotify.com/embed/playlist/34NcMnQ0LEozPRkWTeQ1C6" width="350" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                </div>
+
+                <div id="notoryu-app" class="os-window">
+                    <div class="window-controls">
+                        <span>Notoryu app</span>
+                        <span onclick="closeWindow('notoryu-app')">fechar</span>
+                    </div>
+
+                    <div class="notoryu-grid">
+                        <div class="chat-info">
+                            <div class="user-avatar">
+                                <img src="https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4" alt="Avatar do meawto">
+                            </div>
+                            
+                            <div class="user-info">
+                                <span>meawto</span>
+                                <span>disponível</span>
+                            </div>
+                        </div>
+                        <div class="chat-data">
+                            b
+                        </div>
+                        <div class="chat-input">
+                            <div class="chat-choices">
+                                irra
+                            </div>
+                            <span>:3</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="os-dock">
+                <button><img src="./assets/icons/browser.webp" alt="notoryu app"></button>
+                <button><img src="./assets/icons/file-manager.png" alt="file manager"></button>
+                <button onmousedown="createWindow('notoryu-app')"><img src="./assets/icons/lua.webp" alt="notoryu app"></button>
+                <button onmousedown="createWindow('music-player')"><img src="./assets/icons/music.webp" alt="notoryu app"></button>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="./window.js"></script>
+    <script src="./load_os.js"></script>
+
+
+</body>
+</html>
