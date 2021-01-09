@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&family=Spartan:wght@100;400;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- local css -->
     <link rel="stylesheet" href="./components/root.css">
 
@@ -17,12 +18,13 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </head>
+
 <body>
-    
+
     <div class="os-grid">
 
         <div class="container-desktop">
-           
+
             <div id="os-desktop">
 
                 <div id="os-taskbar">
@@ -41,11 +43,16 @@
 
                 <div id="music-player" class="os-window">
                     <div class="window-controls">
-                        <span>Spotify</span>
+                        <span>Playlist</span>
                         <span onclick="closeWindow('music-player')">fechar</span>
                     </div>
 
-                    <iframe src="https://open.spotify.com/embed/playlist/34NcMnQ0LEozPRkWTeQ1C6" width="350" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=PLssT18uvyaNgjzUx6jX4H_g9Dmtn18xd-" frameborder="0">
+                    </iframe>
+                    <div class="iframe-overlay"></div>
+
+
+                    <!-- <iframe src="https://open.spotify.com/embed/playlist/34NcMnQ0LEozPRkWTeQ1C6" width="350" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
                 </div>
 
                 <div id="notoryu-app" class="os-window">
@@ -59,7 +66,7 @@
                             <div class="user-avatar">
                                 <img src="https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4" alt="Avatar do meawto">
                             </div>
-                            
+
                             <div class="user-info">
                                 <span>meawto</span>
                                 <span>disponível</span>
@@ -86,7 +93,7 @@
                 <button onmousedown="createWindow('music-player')"><img src="./assets/icons/music.webp" alt="notoryu app"></button>
             </div>
         </div>
-        
+
     </div>
 
     <script src="./window.js"></script>
@@ -94,4 +101,5 @@
 
 
 </body>
+
 </html>

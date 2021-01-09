@@ -2,54 +2,56 @@ let desktopSize = document.getElementById('os-desktop')
 
 function createWindow(name) {
 
-	var osWindow = document.getElementById(name)
+    var osWindow = document.getElementById(name)
 
-	if (!(osWindow.style.opacity == '1')) {
-	
-		osWindow.style.left = (desktopSize.offsetWidth / 2 - osWindow.offsetWidth / 2) + 'px'
-		osWindow.style.top = (desktopSize.offsetHeight / 2 - osWindow.offsetHeight / 2) + 'px'
+    if (!(osWindow.style.opacity == '1')) {
 
-		setTimeout(() => {osWindow.style.opacity = '1'}, 400)
-	} else {
-		if (osWindow.style.zIndex == '1') {
-			$(".os-window").not(this).css("z-index", "1")
-			$(".os-window").not(this).css("filter", "grayscale(1)")
-	
-			osWindow.style.zIndex = '2'
-			osWindow.style.filter = 'grayscale(0)'
-			osWindow.style.animation = ''
-			void osWindow.offsetHeight
-			osWindow.style.animation = 'showWindow 400ms'
-		} else {
-			closeWindow(name)
-		}
-	}
+        osWindow.style.left = (desktopSize.offsetWidth / 2 - osWindow.offsetWidth / 2) + 'px'
+        osWindow.style.top = (desktopSize.offsetHeight / 2 - osWindow.offsetHeight / 2) + 'px'
 
-	
+        setTimeout(() => { osWindow.style.opacity = '1' }, 400)
+    } else {
+        if (osWindow.style.zIndex == '1') {
+            $(".os-window").not(this).css("z-index", "1")
+            $(".os-window").not(this).css("filter", "grayscale(1)")
 
-	$(".os-window").not(this).css("z-index", "1")
-	$(".os-window").not(this).css("filter", "grayscale(1)")
-	$(".os-window").not(this).css("box-shadow", "none")
-	
+            osWindow.style.zIndex = '2'
+            osWindow.style.filter = 'grayscale(0)'
+            osWindow.style.animation = ''
+            void osWindow.offsetHeight
+            osWindow.style.animation = 'showWindow 400ms'
+        } else {
+            closeWindow(name)
+        }
+    }
 
-	osWindow.style.zIndex = '2'
-	osWindow.style.filter = 'grayscale(0)'
-	osWindow.style.filter = 'grayscale(0)'
-	osWindow.style.boxShadow = '0 10px 30px var(--window-shadow-v1)'
+
+
+    $(".os-window").not(this).css("z-index", "1")
+    $(".os-window").not(this).css("filter", "grayscale(1)")
+    $(".os-window").not(this).css("box-shadow", "none")
+    $(".os-window .iframe-overlay").not(this).css("display", "block")
+
+
+    osWindow.style.zIndex = '2'
+    osWindow.style.filter = 'grayscale(0)'
+    osWindow.style.filter = 'grayscale(0)'
+    osWindow.style.boxShadow = '0 10px 30px var(--window-shadow-v1)'
+    osWindow.querySelector('.iframe-overlay').style.display = "none"
 }
 
 function closeWindow(name) {
-	var osWindow = document.getElementById(name)
-	osWindow.style.transition = 'opacity 400ms, top 1s ease, filter 400ms, box-shadow 200ms'
-	osWindow.style.opacity = '0'
-	osWindow.style.top = desktopSize.offsetHeight + 'px'
+    var osWindow = document.getElementById(name)
+    osWindow.style.transition = 'opacity 400ms, top 1s ease, filter 400ms, box-shadow 200ms'
+    osWindow.style.opacity = '0'
+    osWindow.style.top = desktopSize.offsetHeight + 'px'
 }
 
 
 document.querySelectorAll('.os-window').forEach(item => {
     item.addEventListener('mousedown', () => {
-		item.style.transition = 'opacity 400ms, filter 400ms, box-shadow 200ms' 
-	})
+        item.style.transition = 'opacity 400ms, filter 400ms, box-shadow 200ms'
+    })
 })
 
 
@@ -58,22 +60,38 @@ document.querySelectorAll('.os-window').forEach(item => {
 let windowsJquery = ["#music-player", "#notoryu-app"]
 
 windowsJquery.forEach(window => {
-	$(window).draggable({
-		containment: "parent",
-		cursor: "crosshair"
-	  });
+    $(window).draggable({
+        containment: "parent",
+        tolerance: "touch",
+        cursor: "crosshair",
+        cancel: '.iframe-overlay',
+        start: function() {
+            // $(this).css({ opacity: 0.8 });
+            $(this).css("transform", "scale(1.02)");
+        },
+        stop: function() {
+            // Show original after dragging stops
+            // $(this).css({ opacity: 1 });
+            $(this).css("transform", "scale(1)");
+        }
+    })
+    $(window).css("top", desktopSize.offsetHeight)
 })
 
 // JQUERY Z INDEX ON FOCUS
 $(".os-window").mousedown(function() {
-	$(".os-window").not(this).css("z-index", "1")
-	$(".os-window").not(this).css("filter", "grayscale(1)")
-	$(".os-window").not(this).css("box-shadow", "none")
-	// box-shadow: 0 16px 30px var(--window-shadow-v1);
-	$(this).css("z-index", "2")
-	$(this).css("filter", "grayscale(0)")
-	$(this).css("box-shadow", "0 10px 30px var(--window-shadow-v1)")
+    $(".os-window").not(this).css("z-index", "1")
+    $(".os-window").not(this).css("filter", "grayscale(1)")
+    $(".os-window").not(this).css("box-shadow", "none")
+    $(".os-window .iframe-overlay").not(this).css("display", "block")
+    console.log('a')
+
+    $(this).css("z-index", "2")
+    $(this).css("filter", "grayscale(0)")
+    $(this).css("box-shadow", "0 10px 30px var(--window-shadow-v1)")
+    $(this).children(".iframe-overlay").css("display", "none")
 })
+
 
 // $( function() {
 // 	$( "#music-player" ).draggable();
