@@ -30,6 +30,7 @@ function createWindow(name) {
     $(".os-window").not(this).css("z-index", "1")
     $(".os-window").not(this).css("filter", "grayscale(1)")
     $(".os-window").not(this).css("box-shadow", "none")
+    $(".os-window").not(this).css("transform", "scale(0.98)")
     $(".os-window .iframe-overlay").not(this).css("display", "block")
 
 
@@ -37,12 +38,13 @@ function createWindow(name) {
     osWindow.style.filter = 'grayscale(0)'
     osWindow.style.filter = 'grayscale(0)'
     osWindow.style.boxShadow = '0 10px 30px var(--window-shadow-v1)'
+    osWindow.style.transform = 'scale(1)'
     osWindow.querySelector('.iframe-overlay').style.display = "none"
 }
 
 function closeWindow(name) {
     var osWindow = document.getElementById(name)
-    osWindow.style.transition = 'opacity 400ms, top 1s ease, filter 400ms, box-shadow 200ms'
+    osWindow.style.transition = 'opacity 400ms, top 1s ease, filter 400ms, box-shadow 200ms, transform 100ms'
     osWindow.style.opacity = '0'
     osWindow.style.top = desktopSize.offsetHeight + 'px'
 }
@@ -50,7 +52,7 @@ function closeWindow(name) {
 
 document.querySelectorAll('.os-window').forEach(item => {
     item.addEventListener('mousedown', () => {
-        item.style.transition = 'opacity 400ms, filter 400ms, box-shadow 200ms'
+        item.style.transition = 'opacity 400ms, filter 400ms, box-shadow 200ms, transform 100ms'
     })
 })
 
@@ -64,15 +66,14 @@ windowsJquery.forEach(window => {
         containment: "parent",
         tolerance: "touch",
         cursor: "crosshair",
-        cancel: '.iframe-overlay',
+        cancel: '.iframe-overlay, .chat-input',
         start: function() {
-            // $(this).css({ opacity: 0.8 });
             $(this).css("transform", "scale(1.02)");
+            $(this).css("opacity", "0.8");
         },
         stop: function() {
-            // Show original after dragging stops
-            // $(this).css({ opacity: 1 });
             $(this).css("transform", "scale(1)");
+            $(this).css("opacity", "1")
         }
     })
     $(window).css("top", desktopSize.offsetHeight)
@@ -83,25 +84,13 @@ $(".os-window").mousedown(function() {
     $(".os-window").not(this).css("z-index", "1")
     $(".os-window").not(this).css("filter", "grayscale(1)")
     $(".os-window").not(this).css("box-shadow", "none")
+    $(".os-window").not(this).css("transform", "scale(0.98)")
     $(".os-window .iframe-overlay").not(this).css("display", "block")
     console.log('a')
 
     $(this).css("z-index", "2")
     $(this).css("filter", "grayscale(0)")
     $(this).css("box-shadow", "0 10px 30px var(--window-shadow-v1)")
+    $(this).css("transform", "scale(1)")
     $(this).children(".iframe-overlay").css("display", "none")
 })
-
-
-// $( function() {
-// 	$( "#music-player" ).draggable();
-// })
-
-
-
-
-// if(emote_container.classList.contains('emote-container-show')) {
-// 	emote_container.classList.remove("emote-container-show");
-// } else { 
-// 	emote_container.classList.add("emote-container-show");
-// }

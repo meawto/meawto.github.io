@@ -21,6 +21,10 @@
 
 <body>
 
+    <div id="msg-welcome">
+
+    </div>
+
     <div class="os-grid">
 
         <div class="container-desktop">
@@ -51,8 +55,6 @@
                     </iframe>
                     <div class="iframe-overlay"></div>
 
-
-                    <!-- <iframe src="https://open.spotify.com/embed/playlist/34NcMnQ0LEozPRkWTeQ1C6" width="350" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
                 </div>
 
                 <div id="notoryu-app" class="os-window">
@@ -64,7 +66,8 @@
                     <div class="notoryu-grid">
                         <div class="chat-info">
                             <div class="user-avatar">
-                                <img src="https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4" alt="Avatar do meawto">
+                                <img src="./assets/avatar.jpg" alt="Avatar do meawto">
+                                <!-- <img src="https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4" alt="Avatar do meawto"> -->
                             </div>
 
                             <div class="user-info">
@@ -77,25 +80,48 @@
                         </div>
                         <div class="chat-input">
                             <div class="chat-choices">
-                                irra
+                                <span>
+                                    oi
+                                </span>
+                                <span>
+                                    sobre
+                                </span>
+                                <span>
+                                    experiencia
+                                </span>
+                                <span>
+                                    conhecimentos
+                                </span>
+                                <span>
+                                    café com açúcar ou sem?
+                                </span>
+                                <span>
+                                    {numeros de hentai aqui} - sim vou colocar
+                                </span>
                             </div>
-                            <span>:3</span>
+
+                            <span class="chat-emotes"><img src="./assets/emotes/ghost.png" alt=""></span>
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
+
             <div id="os-dock">
                 <button><img src="./assets/icons/browser.webp" alt="notoryu app"></button>
                 <button><img src="./assets/icons/file-manager.png" alt="file manager"></button>
                 <button onmousedown="createWindow('notoryu-app')"><img src="./assets/icons/lua.webp" alt="notoryu app"></button>
                 <button onmousedown="createWindow('music-player')"><img src="./assets/icons/music.webp" alt="notoryu app"></button>
             </div>
+
         </div>
 
     </div>
 
+
+    <!-- local js -->
     <script src="./window.js"></script>
     <script src="./load_os.js"></script>
 

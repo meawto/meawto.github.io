@@ -6,9 +6,12 @@
     height: 40rem;
     border-radius: 0.4rem;
     overflow: hidden;
+    font-family: var(--second-font);
 }
 
-.chat-info, .chat-data, .chat-input {
+.chat-info,
+.chat-data,
+.chat-input {
     padding: 0.6rem 1rem;
 }
 
@@ -45,7 +48,6 @@
     margin-right: 0.6rem;
     border-radius: 0.4rem;
     overflow: hidden;
-    
 }
 
 .chat-data {
@@ -60,14 +62,90 @@
     background-color: var(--main-color0);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
+
+
+/* CHOICE */
 
 .chat-choices {
-    background-color: brown;
     margin-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
-/* .chat-input span {
-    background-color: chartreuse;
-} */
+.chat-choices::-webkit-scrollbar {
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+.chat-choices::-webkit-scrollbar-track {
+    background-color: var(--main-color1);
+}
+
+.chat-choices::-webkit-scrollbar-thumb {
+    background: var(--main-color3);
+}
+
+.chat-choices span {
+    /* background: var(--main-color2); */
+    /* display: inline- block; */
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    padding: 0 0.4rem;
+    margin: auto 0.4rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 0.16rem dashed transparent;
+    transition: background 80ms;
+    color: var(--color-status);
+}
+
+.chat-choices span:hover {
+    background: var(--main-color3);
+    transform: scale(1.1);
+    overflow: visible;
+}
+
+.chat-choices span:active {
+    transform: scale(1);
+}
+
+.chat-choices:hover span:not(:hover) {
+    /* opacity: 0.4; */
+    border: 0.16rem dashed var(--main-color3);
+}
+
+
+/* CHOICE */
+
+
+/* EMOTE */
+
+.chat-emotes {
+    padding: 0.4rem;
+}
+
+.chat-emotes img:nth-child(1) {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    transition: transform 100ms ease;
+    cursor: pointer;
+}
+
+.chat-emotes img:nth-child(1):hover {
+    transform: scale(1.2);
+}
+
+.chat-emotes img:nth-child(1):active {
+    transform: scale(1);
+}
+
+
+/* EMOTE */
