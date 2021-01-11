@@ -15,6 +15,9 @@
     padding: 0.6rem 1rem;
 }
 
+
+/* top - chat info */
+
 .chat-info {
     background-color: var(--window-v1);
     display: flex;
@@ -44,19 +47,22 @@
     transform: scale(1.2);
 }
 
-.user-avatar {
-    margin-right: 0.6rem;
-    border-radius: 0.4rem;
-    overflow: hidden;
-}
+
+/* main - chat data */
 
 .chat-data {
     background-color: var(--main-color1);
     height: 100%;
 }
 
+.user-avatar {
+    margin-right: 0.6rem;
+    border-radius: 0.4rem;
+    overflow: hidden;
+}
 
-/* BOTTOM */
+
+/* bottom - chat input */
 
 .chat-input {
     background-color: var(--main-color0);
@@ -66,7 +72,7 @@
 }
 
 
-/* CHOICE */
+/* bottom - choices */
 
 .chat-choices {
     margin-right: 1rem;
@@ -84,11 +90,11 @@
 }
 
 .chat-choices::-webkit-scrollbar-track {
-    background-color: var(--main-color1);
+    background-color: var(--main-color3);
 }
 
 .chat-choices::-webkit-scrollbar-thumb {
-    background: var(--main-color3);
+    background: var(--main-color5);
 }
 
 .chat-choices span {
@@ -122,10 +128,7 @@
 }
 
 
-/* CHOICE */
-
-
-/* EMOTE */
+/* bottom - emotes */
 
 .chat-emotes {
     padding: 0.4rem;
@@ -146,6 +149,3 @@
 .chat-emotes img:nth-child(1):active {
     transform: scale(1);
 }
-
-
-/* EMOTE */
