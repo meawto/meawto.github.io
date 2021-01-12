@@ -8,6 +8,7 @@
 @import url("./desktop.css");
 @import url("./animation.css");
 @import url("./notoryu/notoryu.css");
+@import url("./onload.css");
 
 /* vars */
 
@@ -43,6 +44,7 @@
 body {
     font-family: var(--main-font);
     color: var(--color-name);
+    overflow: hidden;
 }
 
 html {

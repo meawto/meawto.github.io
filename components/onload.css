@@ -1,0 +1,35 @@
+#on-load {
+    background: black;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s 400ms;
+}
+
+#on-load img {
+    display: block;
+    margin-bottom: 1rem;
+    animation: notoryuLogo 10s infinite;
+}
+
+#on-load input[type="text"] {
+    background: transparent;
+    width: 22rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-family: var(--main-font);
+    color: var(--color-name);
+}
+
+#on-load input[type="text"]::placeholder {
+    color: var(--color-sub-status);
+}
+
+#on-load input[type="text"]:focus::placeholder {
+    color: transparent;
+}
