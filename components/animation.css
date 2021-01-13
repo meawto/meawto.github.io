@@ -15,19 +15,25 @@
 
 @keyframes notoryuLogo {
     0% {
-        filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.3))
+        filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.3));
+        opacity: 0.8;
     }
     25% {
-        filter: drop-shadow(0 0 2.6rem rgba(255, 255, 255, 0.3))
+        filter: drop-shadow(0 0 3rem rgba(255, 255, 255, 0.3));
+        opacity: 1;
     }
     50% {
-        filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.3))
+        filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.3));
+        opacity: 0.8;
+        
     }
     75% {
-        filter: drop-shadow(0 0 1.6rem rgba(255, 255, 255, 0.3))
+        filter: drop-shadow(0 0 1.2rem rgba(255, 255, 255, 0.3));
+        opacity: 0.4;
     }
     100% {
-        filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.3))
+        filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.3));
+        opacity: 0.8;
     }
 }
 
@@ -43,3 +49,16 @@
         opacity: 1;
     }
 }
+
+
+@keyframes inputErrorAnim {
+    0% {
+        background: rgba(255, 0, 0, 0.1);
+        box-shadow: 0 0 2rem rgba(255, 0, 0, 0.08);
+    }
+    100% {
+        background: transparent;
+        box-shadow: 0 0 2rem transparent;
+    }
+}
+

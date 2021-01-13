@@ -68,11 +68,18 @@ button:active {
     top: 0.2rem;
 }
 
+#btn-session-start:active {
+    margin-top: 2.6rem;
+}
+
 .tb-glow:active {
     position: relative;
     top: 0.1rem;
 }
 
+.input-error {
+    animation: inputErrorAnim 0.6s 1;
+}
 
 /*  */
 

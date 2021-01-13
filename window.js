@@ -46,12 +46,12 @@ function OsWindowBehavior() {
     })
 
     // window control
-    $(".closeWindowSPAN").click(function() {
+    $(".closeWindowSPAN, .os-dock-button").click(function() {
         NOTOwb.openWindow($(this).data("window-name"))
     })
-    $(".os-dock-button").click(function() {
-        NOTOwb.openWindow($(this).data("window-name"))
-    })
+    // $(".os-dock-button").click(function() {
+    //     NOTOwb.openWindow($(this).data("window-name"))
+    // })
 
 
     this.openWindow = function(name) {

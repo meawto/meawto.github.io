@@ -13,13 +13,14 @@
 
 #on-load img {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.8rem;
     animation: notoryuLogo 10s infinite;
 }
 
 #on-load input[type="text"] {
     background: transparent;
-    width: 22rem;
+    width: 24rem;
+    border-radius: 1rem;
     text-align: center;
     padding: 1rem 2rem;
     font-family: var(--main-font);
@@ -28,8 +29,40 @@
 
 #on-load input[type="text"]::placeholder {
     color: var(--color-sub-status);
+    transition: color 400ms;
 }
 
 #on-load input[type="text"]:focus::placeholder {
     color: transparent;
+}
+
+/* form */
+#on-load form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#on-load form button {
+    background: transparent;
+    width: max-content;
+    color: var(--color-sub-status);
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 1.6rem transparent;
+    transition: letter-spacing 200ms, color 800ms, text-shadow 600ms 200ms ease, top 1s ease, opacity 800ms;
+    cursor: pointer;
+    font-weight: 200;
+    opacity: 0;
+    padding: 1rem 2rem;
+    font-family: var(--second-font);
+    position: absolute;
+    margin-top: 2.4rem;
+    top: 14rem;
+}
+
+#on-load form button:hover {
+    color: white;
+    text-shadow: 0 0 2rem white;
+    letter-spacing: 0.2rem;
 }
