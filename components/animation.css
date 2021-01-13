@@ -1,3 +1,4 @@
+/* SO window animations */
 @keyframes showWindow {
     0% {
         transform: scale(1);
@@ -13,6 +14,7 @@
     }
 }
 
+/* on load animations */
 @keyframes notoryuLogo {
     0% {
         filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.3));
@@ -37,6 +39,7 @@
     }
 }
 
+/* grid animations */
 @keyframes gridOnLoad {
     from {
         transform: scale(1.16);
@@ -50,7 +53,29 @@
     }
 }
 
+@keyframes onLoadOpen {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
+@keyframes onLoadClose {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.84);
+        opacity: 0;
+    }
+}
+
+/* input animations */
 @keyframes inputErrorAnim {
     0% {
         background: rgba(255, 0, 0, 0.1);

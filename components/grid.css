@@ -3,6 +3,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    opacity: 0;
 }
 
 .container-desktop {

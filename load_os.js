@@ -19,9 +19,12 @@ function InitialFunctions() {
     }
 
     this.saveUsername = function (name) {
-        this.session_username = name
+        if (name.length <= 1) {
+            return this.inputError($('#session-username'))
+        }
         if (this.windowReady) {
-            $("#on-load").css("opacity", "0")
+            this.session_username = name
+            $("#on-load").css("animation", "onLoadClose 2s forwards")
             $(".os-grid").css("animation", "gridOnLoad 2s forwards")
             setTimeout(() => {$("#on-load").css("display", "none")}, 1500)
         }
@@ -90,4 +93,7 @@ $(document).ready(function () {
 
 $(window).load(function () {
     NotoOS.windowReady = true
+    $("#on-load").css("animation", "onLoadOpen 3s forwards")
+    $('#session-username').css('top', '1rem')
+    $('#session-username').css('opacity', '1')
 })
