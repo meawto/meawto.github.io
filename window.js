@@ -15,7 +15,7 @@ function OsWindowBehavior() {
         $(window).draggable({
             containment: "parent",
             cursor: "crosshair",
-            cancel: '.iframe-overlay, .chat-input',
+            cancel: '.iframe-overlay, .chat-input, .closeWindowSPAN, #chat-data',
             start: function() {
                 $(this).css("transform", "scale(1.02)")
                 $(this).css("opacity", "0.8")
@@ -24,7 +24,7 @@ function OsWindowBehavior() {
             stop: function() {
                 $(this).css("transform", "scale(1)")
                 $(this).css("opacity", "1")
-                $(".iframe-overlay").css("display", "none")
+                $(this).children(".iframe-container").children(".iframe-overlay").css("display", "none")
             }
         })
         $(window).css("top", this.desktopSize.offsetHeight)

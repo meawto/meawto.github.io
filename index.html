@@ -42,12 +42,16 @@
 <body>
 
     <div id="on-load">
-        <img src="./assets/icons/lua.svg" alt="Notoryu logo">
-        <form id="on-load-form">
-            <input type="text" placeholder="como devo chamar você?" id="session-username" spellcheck="false">
-            <button id="btn-session-start">começar</button>
-
-        </form>
+        <div class="breath-animation">
+            <img src="./assets/icons/lua.svg" alt="Notoryu logo">
+            <form id="on-load-form">
+                <input type="text" placeholder="como devo chamar você?" id="session-username" spellcheck="false">
+                <button id="btn-session-start">começar</button>
+            </form>
+            <div class="on-load-rain">
+                <div id="on-load-rain-particles"></div>
+            </div>
+        </div>
     </div>
 
     <div class="os-grid">
@@ -102,8 +106,18 @@
                                 <span>disponível</span>
                             </div>
                         </div>
-                        <div class="chat-data">
-                            b
+                        <div id="chat-data">
+
+                            <div class="message-wrapper-container">
+                                <div class="message-container">
+                                    <img class="mc-user-avatar" src="./assets/avatar.jpg">
+                                    <div class="mc-user-info">
+                                        <span>meawto</span>
+                                        <span>mensagem interessante aqui sobre meaw e vai depender claramente de escolhas kk ok essa mensagem é random</span>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="chat-input">
                             <div class="chat-choices">
@@ -151,6 +165,7 @@
     <!-- local js -->
     <script src="./window.js"></script>
     <script src="./load_os.js"></script>
+    <script src="./rain.js"></script>
 
 
 </body>

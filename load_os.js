@@ -43,10 +43,10 @@ function InitialFunctions() {
 
         let k = e.key;
 
-        if (k == 'Enter') {
-            this.saveUsername(elem.val())
-            e.preventDefault()
-        }
+        // if (k == 'Enter') {
+        //     this.saveUsername(elem.val())
+        //     e.preventDefault()
+        // }
 
         if (elem.val().length > 16) {
             return location.reload()
@@ -65,9 +65,12 @@ function InitialFunctions() {
         if ($('#session-username').val().length > 1) {
             $('#btn-session-start').css('top', '1rem')
             $('#btn-session-start').css('opacity', '1')
+            $('#btn-session-start').css('cursor', 'pointer')
         } else {
             $('#btn-session-start').css('top', '14rem')
             $('#btn-session-start').css('opacity', '0')
+            $('#btn-session-start').css('cursor', 'default')
+
         }
         setTimeout(this.checkInputEmpty, 200)
     }

@@ -10,7 +10,6 @@
 }
 
 .chat-info,
-.chat-data,
 .chat-input {
     padding: 0.6rem 1rem;
 }
@@ -22,6 +21,7 @@
     background-color: var(--window-v1);
     display: flex;
     flex-direction: row;
+    padding-bottom: 1rem;
 }
 
 .user-info {
@@ -31,12 +31,19 @@
 }
 
 .user-info span:nth-child(1) {
-    color: var(--color-status);
+    color: var(--color-name);
+    font-weight: 600;
 }
 
 .user-info span:nth-child(2) {
-    color: var(--color-sub-status);
+    color: var(--color-status);
     font-size: 0.8rem;
+}
+
+.user-avatar {
+    margin-right: 0.6rem;
+    border-radius: 0.4rem;
+    overflow: hidden;
 }
 
 .chat-info img {
@@ -45,20 +52,6 @@
     display: block;
     object-fit: cover;
     transform: scale(1.2);
-}
-
-
-/* main - chat data */
-
-.chat-data {
-    background-color: var(--main-color1);
-    height: 100%;
-}
-
-.user-avatar {
-    margin-right: 0.6rem;
-    border-radius: 0.4rem;
-    overflow: hidden;
 }
 
 

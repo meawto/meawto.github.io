@@ -14,8 +14,9 @@
     }
 }
 
+
 /* on load animations */
-@keyframes notoryuLogo {
+@keyframes breathAnimation {
     0% {
         filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.3));
         opacity: 0.8;
@@ -38,6 +39,7 @@
         opacity: 0.8;
     }
 }
+
 
 /* grid animations */
 @keyframes gridOnLoad {
@@ -87,3 +89,28 @@
     }
 }
 
+/* rain */
+@keyframes rainAnimation {
+    0% {
+      transform: translateY(0rem);
+      opacity: 0;
+      box-shadow: 0 0 30px transparent;
+    }
+    20% {
+        opacity: 0.1;
+        box-shadow: 0 0 44px 1px white;
+    }
+    50% {
+        opacity: 0.3;
+        box-shadow: 0 0 30px 1px white;
+    }
+    70%{
+        opacity: 0.1;
+        box-shadow: 0 0 44px 1px white;
+    }
+    100% {
+      transform: translateY(36rem);
+      opacity: 0;
+      box-shadow: 0 0 30px transparent;
+    }
+}
