@@ -9,8 +9,6 @@ function rain() {
         let randomDuration = (Math.floor(Math.random() * (60 - 50 + 1) + 50))
 
         this.particles += `<div class="rain-particle" style="animation-duration: ${(randomDuration)}0ms; animation-delay: ${randomDelay}ms; left: ${this.i}%"></div>`
-        
-        console.log(this.i)
     }
 
     $('#on-load-rain-particles').append(this.particles)

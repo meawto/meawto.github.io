@@ -1,7 +1,8 @@
 var elemDatetime = document.getElementById('os-datetime')
-function InitialFunctions() {
+function OSFunctions() {
 
     this.session_username
+    this.session_avatar
     this.windowReady
 
     this.osDateNow = function () {
@@ -76,7 +77,7 @@ function InitialFunctions() {
     }
 }
 
-var NotoOS = new InitialFunctions()
+var NotoOS = new OSFunctions()
 
 $(document).ready(function () {
     setInterval(NotoOS.osDateNow, 1000)

@@ -92,7 +92,7 @@ button:active {
 
 /* irra */
 
-@media screen and (max-width: 960px),
+@media screen and (max-width: 750px),
 screen and (max-height: 800px) {
      :root {
         font-size: 12px;
@@ -103,5 +103,19 @@ screen and (max-height: 800px) {
 screen and (max-height: 580px) {
      :root {
         font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 340px),
+screen and (max-height: 540px) {
+     :root {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 290px),
+screen and (max-height: 500px) {
+     :root {
+        font-size: 8px;
     }
 }
