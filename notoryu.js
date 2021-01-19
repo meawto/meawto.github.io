@@ -1,7 +1,7 @@
 const choices = [ 
     [ ['oi'], ['oi'] ],
     [ ['meaw, você pode comentar sobre você?'], 
-    ['me reconheça como meawto. tenho {data aqui} anos atualmente. Sou brasileiro e vivo no interior de São Paulo',
+    ['me reconheça como meawto. tenho {data aqui (ainda vou colocar tá bom)} anos atualmente. Sou brasileiro e vivo no interior de São Paulo',
         'comecei meus estudos como desenvolvedor no final de 2018 e minha atuação como designer começou no final de 2015, estou gostando muito de estudar para melhorar cada vez mais meus conhecimentos e minhas habilidades',
         'os meus estudos sérios começaram na metade de 2019, quando entrei para a escola técnica estadual. me considero muito criativo e, sempre que consigo, me dedico ao máximo nos meus estudos e projetos',
         'gosto muito de gatinhos, chuva, sorvete, frio, climas nublados, café e principalmente da noite. Um dos seus principais desejos é morar sozinho, conseguir se manter e comprar carros para dirigir de madrugada ou quando houver chuva'] ],
@@ -24,37 +24,85 @@ function MessageInfo(info) {
     this.messageList = choices[info.elem.data('choice-id')]
     this.message = ''
     this.status = true
-    // this.messagePosition = 0
     this.fullMessage = this.messageList[0][0]
-
     this.renderMessage()
-    // this.sleep = function(ms) { return new Promise(resolve => setTimeout(resolve, ms)) }
 
 
     this.sendMessage = function(data) {
         let username = data.username
-        let message = data.message
-        // let that = this
+        let avatar = data.avatar
+        let message = ((data.username == 'meaw') ? this.messageList[1][0] : data.message)
+        let that = this
+
+        let msgContainer = `<div class="message-wrapper-container"><div class="message-container"><img class="mc-user-avatar" src="${avatar}"><div class="mc-user-info"><span>${username}</span><span>${message}</span></div></div>`
 
 
-        let msgContainer = `<div class="message-wrapper-container"><div class="message-container"><img class="mc-user-avatar" src="https://media.discordapp.net/attachments/779341443285516288/784133874665127946/image0.gif"><div class="mc-user-info"><span>${NotoOS.session_username}</span><span>${this.message}</span></div></div>`
-        chat.append($(msgContainer))
+        if (username == 'meaw') {
+            let randomTimer = (Math.floor(Math.random() * (1200 - 600 + 1) + 600))
+            $('#meaw-is-typing').css('opacity', '1')
+            setTimeout(()=>{
+                that.scrollChatBottom()
+                chat.append($(msgContainer))
+            $('#meaw-is-typing').css('opacity', '0')
+                that.messageList[1].shift()
+    
+                if (that.messageList[1][0]) {
+                    setTimeout(()=> {
+                        that.sendMessage({username: 'meaw', avatar: './assets/avatar.jpg'})
+                    }, randomTimer)
+                } else {
+                    that.finishChoice()
+                }
+            }, timer = (that.messageList[1][0].length*20 > 1000) ? that.messageList[1][0].length*20 : 1000)
 
-        
-        this.messageList[0].shift()
-
-        if (this.messageList[0][0]) {
-            return true
         } else {
-            return false
+            this.scrollChatBottom(1)
+            chat.append($(msgContainer))
+            
+            this.messageList[0].shift()
+    
+            if (this.messageList[0][0]) {
+                return true
+            } else {
+                return false
+            }
         }
-
     }
 
     this.finishChoice = function(data) {
-        $('.chat-choices-container').css('opacity', '1')
-        $('.chat-choices-container').css('z-index', '6')
-        $('.chat-choices-container').css('width', '100%')
+        setTimeout(()=>{
+            $('.chat-choices-container').css('opacity', '1')
+            $('.chat-choices-container').css('z-index', '6')
+            $('.chat-choices-container').css('width', '100%')
+            $('#input-blinking-cursor').removeClass("input-blinking-cursor-anim")
+            $('#input-blinking-cursor').css('opacity', '0')
+        }, 400)
+    }
+
+
+    this.scrollChatBottom = function(x) {
+
+        let n1 = $("#chat-data").scrollTop()
+        let n2 = $("#chat-data")[0].scrollHeight - $("#chat-data")[0].offsetHeight
+    
+        if (n1 == n2 || x) {
+            $("#chat-data").stop().animate({ scrollTop: $("#chat-data")[0].scrollHeight }, 500)
+        } else {
+            $('#new-messages').css('opacity', '1')
+        }
+        // console.log(n1, n2)
+    }
+    
+    
+    // SCROLL BOTTOM ALERT
+    this.checkBottomScroll = function() {
+        let n1 = $("#chat-data").scrollTop()
+        let n2 = $("#chat-data")[0].scrollHeight - $("#chat-data")[0].offsetHeight
+        
+        if (n1 == n2) {
+            // console.log('ativou 2')
+            $('#new-messages').css('opacity', '0')
+        }
     }
 
 }
@@ -62,30 +110,34 @@ function MessageInfo(info) {
 
 MessageInfo.prototype.renderMessage = function() {
     let that = this
-
+    let typingDelay = (Math.floor(Math.random() * (70 - 30 + 1) + 30))
 
     this.fullMessage = this.messageList[0][0]
-
 
     if (!(this.message === this.fullMessage)) {
         this.message = this.fullMessage.substring(0, this.message.length + 1)
         span.html(this.message)
+        $('#input-blinking-cursor').removeClass("input-blinking-cursor-anim")
         setTimeout(()=> {
             that.renderMessage()
-        }, 50)
+        }, typingDelay)
     } else {
-        span.html('')
-        this.elemChoice.remove()
-        if (this.sendMessage({username: 'robertinho', message: this.message})) {
-            console.log('retornou true')
-            this.message = ''
-            this.renderMessage()
-        } else {
-            console.log('nada')
-            this.finishChoice()
-        }
-        
-        // meawto responde
+        setTimeout(()=>{
+            span.html('')
+            that.elemChoice.remove()
+            if (that.sendMessage({username: NotoOS.session_username, avatar: NotoOS.session_avatar, message: that.message})) {
+                that.message = ''
+                $('#input-blinking-cursor').addClass("input-blinking-cursor-anim")
+                setTimeout(()=> {
+                    that.renderMessage()
+                }, 1200)
+            } else {
+                $('#input-blinking-cursor').addClass("input-blinking-cursor-anim")
+                setTimeout(()=>{
+                    that.sendMessage({username: 'meaw', avatar: './assets/avatar.jpg'})
+                }, timer = (that.message.length*50 > 1400) ? that.message.length*50 : 1400)
+            }
+        }, 400)
     }
 }
 
@@ -97,7 +149,20 @@ $(".chat-choices").click(function() {
     $('.chat-choices-container').css('z-index', '4')
     $('.chat-choices-container').css('width', '0')
 
+    $('#input-blinking-cursor').css('opacity', '1')
+
     setTimeout(()=>{
         var Notoryu = new MessageInfo({elem: $(this)})
+
+        $("#chat-data").on('scroll', ()=>{
+            // console.log('ativou 1')
+            Notoryu.checkBottomScroll()
+        })
+
+        $('#new-messages').click(()=>{
+            Notoryu.scrollChatBottom(1)
+        })
     }, 1000)
+    
 })
+
