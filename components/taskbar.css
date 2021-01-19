@@ -1,10 +1,10 @@
 #os-taskbar {
     backdrop-filter: blur(10px);
     background-color: var(--taskbar-v1);
-    position: absolute;
+    /* position: absolute;
     left: 0; 
     right: 0; 
-    margin: 0 auto;
+    margin: 0 auto; */
     padding: 0.4rem 1rem;
     display: flex;
     flex-direction: row;
@@ -12,7 +12,7 @@
     font-family: var(--second-font);
     font-size: 0.8rem;
     font-weight: 600;
-    z-index: 3;
+    /* z-index: 3; */
 }
 
 .taskbar-apps, .taskbar-time, .taskbar-info {

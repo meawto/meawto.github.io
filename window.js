@@ -13,7 +13,7 @@ function OsWindowBehavior() {
     // load jquery window draggable
     this.windowsJquery.forEach(window => {
         $(window).draggable({
-            containment: "parent",
+            containment: "#os-desktop",
             cursor: "crosshair",
             cancel: '.iframe-overlay, .chat-input, .closeWindowSPAN, #chat-data',
             start: function() {
