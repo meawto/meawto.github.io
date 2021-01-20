@@ -11,8 +11,14 @@ const choices = [
     [ ['quais são seus conhecimentos?', 'me refiro as coisas que você atualmente estuda sobre e/ou tem experiência para trabalhar'],
     ['basicamente:\n- Adobe (Photoshop, Premiere e After Effects);\n- Office (Word, Outlook, Teams e Excel);\n- Informática (Montagem e manutenção de computadores, detecção e correção de problemas nos computadores e instalação e configuração de redes e softwares);\n- desenvolvedor (front-end, back-end, servidor e banco de dados);',
         'e as linguagens de desenvolvimento:\nhtml, css, javascript (também uso nodejs), php, python e mysql', 'pretendo começar a trabalhar com frameworks, principalmente react. sim, eu não uso frameworks para criar meus trabalhos. o belo motivo que tenho é porque amo digitar, mas conheço bem o poder dos frameworks e por isso pretendo dominá-los'] ],
-        [ ['meaw, você prefere café com açúcar ou sem?'], ['então... eu prefiro com açúcar, mas minha preferência é com pouco açúcar para sentir melhor o gosto do café'], ['hm', 'tá bom'] ],
-    [ ['216158'], ['esse é bom', 'emoji aqui'] ]
+    [ ['como posso me comunicar com você?'], ['minha preferência é pelo discord: meawto#3269', 'mas se preferir, aqui estão algumas redes sociais minhas:\ntwitter <a href="https://twitter.com/meawtooo" target="_blank">@meawtooo</a>\ninstagram <a href="https://www.instagram.com/milltwoo/" target="_blank">@milltwoo</a>']],
+    [ ['meaw, você prefere café com açúcar ou sem?'], ['então... eu prefiro com açúcar, mas minha preferência é com pouco açúcar para sentir melhor o gosto do café'] ],
+    [ ['216158'], ['esse é bom', 'emoji aqui'] ],
+    [ ['como posso sugerir melhorias ou ideias para seus projetos?', 'eu queria poder ajudar'], ['você pode conversar comigo sobre isso no discord. Caso seja referente ao Noto OS ou outro projeto meu, é possível enviar issues no repositório do mesmo caso prefira']],
+    [ ['queria perguntar como posso estar ajudando você e seus projetos... com dinheiro...'], ['fico feliz em ler isso e agradeço pela consideração, mas não posso aceitar por enquanto. Pretendo começar a desenvolver coisas legais para você (como jogos, ferramentas e etc), daí seria legal permitir doações para sempre melhorar os meus projetos',
+        'mesmo que você insista em ajudar, eu não tenho ko-fi, patreon ou outra coisa que aceite essa ajuda. Não se preocupe, a sua ajuda com ideias e recomendações é tão valiosa quanto uma doação']],
+    [ ['por que será que a luna não liga para nós?'], ['para você eu não sei', 'no meu caso é porque ela é chata', 'ela provavelmente nem vai ler isso mesmo, depois eu tiro'] ],
+    [ ['irra'], ['psicopata'] ]
 ]
 
 const chat = $('#chat-data')
@@ -31,13 +37,13 @@ function MessageInfo(info) {
     this.sendMessage = function(data) {
         let username = data.username
         let avatar = data.avatar
-        let message = ((data.username == 'meaw') ? this.messageList[1][0] : data.message)
+        let message = ((data.username == 'meawto') ? this.messageList[1][0] : data.message)
         let that = this
 
         let msgContainer = `<div class="message-wrapper-container"><div class="message-container"><img class="mc-user-avatar" src="${avatar}"><div class="mc-user-info"><span>${username}</span><span>${message}</span></div></div>`
 
 
-        if (username == 'meaw') {
+        if (username == 'meawto') {
             let randomTimer = (Math.floor(Math.random() * (1200 - 600 + 1) + 600))
             $('#meaw-is-typing').css('opacity', '1')
             setTimeout(()=>{
@@ -48,7 +54,7 @@ function MessageInfo(info) {
     
                 if (that.messageList[1][0]) {
                     setTimeout(()=> {
-                        that.sendMessage({username: 'meaw', avatar: './assets/avatar.jpg'})
+                        that.sendMessage({username: 'meawto', avatar: './assets/avatar.jpg'})
                     }, randomTimer)
                 } else {
                     that.finishChoice()
@@ -56,7 +62,7 @@ function MessageInfo(info) {
             }, timer = (that.messageList[1][0].length*20 > 1000) ? that.messageList[1][0].length*20 : 1000)
 
         } else {
-            this.scrollChatBottom(1)
+            this.scrollChatBottom()
             chat.append($(msgContainer))
             
             this.messageList[0].shift()
@@ -76,33 +82,15 @@ function MessageInfo(info) {
             $('.chat-choices-container').css('width', '100%')
             $('#input-blinking-cursor').removeClass("input-blinking-cursor-anim")
             $('#input-blinking-cursor').css('opacity', '0')
+            if ($('.chat-choices-container').children().length == 0) {
+                $('.chat-choices-container').html('mensagem show toda torta dizendo que acabou')
+            }
         }, 400)
     }
 
 
-    this.scrollChatBottom = function(x) {
-
-        let n1 = $("#chat-data").scrollTop()
-        let n2 = $("#chat-data")[0].scrollHeight - $("#chat-data")[0].offsetHeight
-    
-        if (n1 == n2 || x) {
-            $("#chat-data").stop().animate({ scrollTop: $("#chat-data")[0].scrollHeight }, 500)
-        } else {
-            $('#new-messages').css('opacity', '1')
-        }
-        // console.log(n1, n2)
-    }
-    
-    
-    // SCROLL BOTTOM ALERT
-    this.checkBottomScroll = function() {
-        let n1 = $("#chat-data").scrollTop()
-        let n2 = $("#chat-data")[0].scrollHeight - $("#chat-data")[0].offsetHeight
-        
-        if (n1 == n2) {
-            // console.log('ativou 2')
-            $('#new-messages').css('opacity', '0')
-        }
+    this.scrollChatBottom = function() {
+        $("#chat-data").stop().animate({ scrollTop: $("#chat-data")[0].scrollHeight }, 500)
     }
 
 }
@@ -134,7 +122,7 @@ MessageInfo.prototype.renderMessage = function() {
             } else {
                 $('#input-blinking-cursor').addClass("input-blinking-cursor-anim")
                 setTimeout(()=>{
-                    that.sendMessage({username: 'meaw', avatar: './assets/avatar.jpg'})
+                    that.sendMessage({username: 'meawto', avatar: './assets/avatar.jpg'})
                 }, timer = (that.message.length*50 > 1400) ? that.message.length*50 : 1400)
             }
         }, 400)
@@ -151,17 +139,13 @@ $(".chat-choices").click(function() {
 
     $('#input-blinking-cursor').css('opacity', '1')
 
+    if (!($('#chat-data-welcome').css('height') == '0px')) {
+        $('#chat-data-welcome').css('height', '0')
+        $('#chat-data-welcome').css('opacity', '0')
+    }
+    
     setTimeout(()=>{
         var Notoryu = new MessageInfo({elem: $(this)})
-
-        $("#chat-data").on('scroll', ()=>{
-            // console.log('ativou 1')
-            Notoryu.checkBottomScroll()
-        })
-
-        $('#new-messages').click(()=>{
-            Notoryu.scrollChatBottom(1)
-        })
     }, 1000)
     
 })

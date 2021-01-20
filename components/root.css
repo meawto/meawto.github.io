@@ -68,6 +68,12 @@ html {
     user-select: none;
 }
 
+a {
+    color: rgb(0, 136, 255);
+    user-select: text;
+    text-decoration: none;
+}
+
 
 /* btn */
 

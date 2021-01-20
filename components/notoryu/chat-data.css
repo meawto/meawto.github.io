@@ -1,14 +1,13 @@
 #chat-data {
     background-color: var(--main-color1);
-    height: 100%;
+    height: 30rem;
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
     /* justify-content: flex-end; */
     user-select: text;
     background-color: var(--main-color1);
-    height: 100%;
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
     /* position: relative; */
 }
@@ -23,16 +22,13 @@
 #chat-data::-webkit-scrollbar-thumb {
     background: var(--main-color2);
 }
-#chat-data:hover > ::-webkit-scrollbar-thumb {
-    background: #d39494;
-}
 
 #chat-data .message-wrapper-container:last-child {
     margin-bottom: 2.2rem;
 }
 
-#chat-data .message-wrapper-container:nth-child(1) {
-    margin-top: 2rem;
+#chat-data .message-wrapper-container:nth-child(2) {
+    margin-top: 1rem;
 }
 
 /* message container */
@@ -40,7 +36,9 @@
     /* background-color: rgb(8, 49, 49); */
     display: flex;
     flex-direction: column;
+    opacity: 0;
     margin: 0.5rem 0 0.5rem 0;
+    animation: showMessageAnim 600ms forwards;
 }
 
 .message-container {
@@ -73,16 +71,9 @@
     word-break: break-word;
     font-size: 1rem;
     user-select: text;
+    white-space: pre-wrap;
 }
 
-
-.new-message-wrapper {
-    color: var(--color-status);
-    word-break: break-word;
-    font-size: 1.04rem;
-    user-select: text;
-    margin-left: 3.6rem;
-}
 /* user-info */
 
 .mc-user-avatar {
@@ -92,4 +83,47 @@
     object-fit: cover;
     border-radius: 0.4rem;
     margin-right: 0.6rem;
+}
+
+/* chat data welcome */
+
+#chat-data-welcome {
+    /* background-color: blue; */
+    /* width: 100%; */
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    transition: height 1s, opacity 500ms;
+    opacity: 1;
+    overflow: hidden;
+    /* padding: 0 6rem; */
+    /* font-family: var(--main-font); */
+}
+
+#chat-data-welcome img {
+    width: 8rem;
+    display: block;
+    margin: auto auto 2rem auto;
+}
+
+.welcome-span {
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    margin: 0 auto auto auto;
+}
+
+.welcome-span span {
+    text-align: center;
+}
+
+.welcome-span span:nth-child(1) {
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+    color: var(--color-status);
+}
+
+.welcome-span span:nth-child(2) {
+    margin-bottom: auto;
+    color: var(--color-sub-status);
 }

@@ -79,23 +79,19 @@
 
 /* input animations */
 @keyframes inputErrorAnim {
-    0% {
+    from {
         background: rgba(255, 0, 0, 0.1);
         box-shadow: 0 0 2rem rgba(255, 0, 0, 0.08);
     }
-    100% {
+    to {
         background: transparent;
         box-shadow: 0 0 2rem transparent;
     }
 }
 
 @keyframes inputBlinking {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
 /* rain */
@@ -122,4 +118,11 @@
       opacity: 0;
       box-shadow: 0 0 30px transparent;
     }
+}
+
+
+/* message container */
+@keyframes showMessageAnim {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
