@@ -1,11 +1,3 @@
-.container-desktop {
-    background: url('../assets/wallpaper.png') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 #os-desktop {
     height: 100%;
     position: relative;

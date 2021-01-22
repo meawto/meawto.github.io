@@ -33,7 +33,7 @@ function OsWindowBehavior() {
     // JQUERY Z INDEX ON FOCUS
     $(".os-window").mousedown(function() {
         $(".os-window").not(this).css("z-index", "1")
-        $(".os-window").not(this).css("filter", "grayscale(1)")
+        // $(".os-window").not(this).css("filter", "grayscale(1)")
         $(".os-window").not(this).css("box-shadow", "none")
         $(".os-window").not(this).css("transform", "scale(0.98)")
         $(".os-window .iframe-container .iframe-overlay").not(this).css("display", "block")
@@ -81,14 +81,14 @@ function OsWindowBehavior() {
 
 
         $(".os-window").css("z-index", "1")
-        $(".os-window").css("filter", "grayscale(1)")
+        // $(".os-window").css("filter", "grayscale(1)")
         $(".os-window").css("box-shadow", "none")
         $(".os-window").css("transform", "scale(0.98)")
         $(".iframe-overlay").css("display", "block")
 
 
         osWindow.style.zIndex = '2'
-        osWindow.style.filter = 'grayscale(0)'
+        // osWindow.style.filter = 'grayscale(0)'
         osWindow.style.boxShadow = '0 10px 30px var(--window-shadow-v1)'
         osWindow.style.transform = 'scale(1)'
         try {

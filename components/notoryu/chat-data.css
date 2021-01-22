@@ -4,12 +4,10 @@
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-end; */
     user-select: text;
     background-color: var(--main-color1);
     overflow: auto;
     overflow-x: hidden;
-    /* position: relative; */
 }
 
 #chat-data::-webkit-scrollbar {
@@ -31,9 +29,9 @@
     margin-top: 1rem;
 }
 
+
 /* message container */
 .message-wrapper-container {
-    /* background-color: rgb(8, 49, 49); */
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -45,20 +43,14 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    /* background-color: brown; */
 }
+
 
 /* user-info */
 .mc-user-info {
     display: flex;
     flex-direction: column;
-    /* background-color: rgb(77, 18, 104); */
-    /* justify-content: center; */
 }
-
-/* .mc-user-info span {
-    
-} */
 
 .mc-user-info span:nth-child(1) {
     color: white;
@@ -74,8 +66,6 @@
     white-space: pre-wrap;
 }
 
-/* user-info */
-
 .mc-user-avatar {
     width: 3rem;
     height: 3rem;
@@ -85,22 +75,19 @@
     margin-right: 0.6rem;
 }
 
+
 /* chat data welcome */
 
 #chat-data-welcome {
-    /* background-color: blue; */
-    /* width: 100%; */
     height: 30rem;
     display: flex;
     flex-direction: column;
-    transition: height 1s, opacity 500ms;
+    transition: height 1.8s, opacity 400ms;
     opacity: 1;
     overflow: hidden;
-    /* padding: 0 6rem; */
-    /* font-family: var(--main-font); */
 }
 
-#chat-data-welcome img {
+#chat-data-welcome img:nth-child(1) {
     width: 8rem;
     display: block;
     margin: auto auto 2rem auto;
@@ -109,8 +96,7 @@
 .welcome-span {
     display: flex;
     flex-direction: column;
-    /* background-color: blue; */
-    margin: 0 auto auto auto;
+    margin: 0 auto 2rem auto;
 }
 
 .welcome-span span {
@@ -118,12 +104,12 @@
 }
 
 .welcome-span span:nth-child(1) {
-    margin-bottom: 0.4rem;
+    /* margin-bottom: 0.4rem; */
     font-size: 1.2rem;
     color: var(--color-status);
 }
 
 .welcome-span span:nth-child(2) {
-    margin-bottom: auto;
+    /* margin-bottom: 0; */
     color: var(--color-sub-status);
 }

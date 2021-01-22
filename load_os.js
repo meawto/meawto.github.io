@@ -100,4 +100,8 @@ $(window).load(function () {
     $("#on-load").css("animation", "onLoadOpen 3s forwards")
     $('#session-username').css('top', '1rem')
     $('#session-username').css('opacity', '1')
+
+    $('input[name="notoryu-session-avatar-choice"]').click(function(el) {
+        NotoOS.session_avatar = el.target.getAttribute('value')
+    })
 })

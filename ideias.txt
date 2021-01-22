@@ -1,4 +1,3 @@
-função de brilho {
-	possibilidade de alterar a opacidade de uma div com posição absoluta para simular efeito de brilho no sistema operacional
-}
+função de brilho:
+-	possibilidade de alterar a opacidade de uma div com posição absoluta para simular efeito de brilho no sistema operacional
 

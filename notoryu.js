@@ -54,7 +54,7 @@ function MessageInfo(info) {
     
                 if (that.messageList[1][0]) {
                     setTimeout(()=> {
-                        that.sendMessage({username: 'meawto', avatar: './assets/avatar.jpg'})
+                        that.sendMessage({username: 'meawto', avatar: 'https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4'})
                     }, randomTimer)
                 } else {
                     that.finishChoice()
@@ -122,7 +122,7 @@ MessageInfo.prototype.renderMessage = function() {
             } else {
                 $('#input-blinking-cursor').addClass("input-blinking-cursor-anim")
                 setTimeout(()=>{
-                    that.sendMessage({username: 'meawto', avatar: './assets/avatar.jpg'})
+                    that.sendMessage({username: 'meawto', avatar: 'https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4'})
                 }, timer = (that.message.length*50 > 1400) ? that.message.length*50 : 1400)
             }
         }, 400)
