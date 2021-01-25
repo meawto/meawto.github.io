@@ -1,0 +1,11 @@
+.noto-browser {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    /* width: 34rem; */
+    /* height: 40rem; */
+    border-radius: 0.4rem;
+    overflow: hidden;
+    /* font-family: var(--second-font); */
+}

@@ -2,6 +2,7 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+    display: flex;
 }
 
 .os-window {
@@ -73,4 +74,38 @@
     width: 100%;
     height: 100%;
     position: absolute;
+}
+
+/* context menu */
+
+#desktop-context-menu {
+    background-color: var(--dock-btn-v1);
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 0 0;
+    font-family: var(--second-font);
+    overflow: hidden;
+    border-radius: 0.3rem;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 0.1rem solid var(--context-menu-item);
+    border-left: 0.2rem solid rgba(194, 194, 194, 0.6);
+    transition: top 200ms, left 200ms, opacity 400ms;
+}
+
+.context-menu-item {
+    cursor: pointer;
+    padding: 0.4rem 1.6rem;
+}
+
+.context-menu-item:hover {
+    background-color: var(--context-menu-item);
+}
+
+.context-menu-item:active {
+    background-color: var(--dock-v1);
 }

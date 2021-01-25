@@ -1,0 +1,147 @@
+#os-config {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    height: 34rem;
+    font-family: var(--second-font);
+}
+
+.os-config-grid {
+    background-color: var(--main-color1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+/* config choice */
+
+#os-config-choice {
+    background-color: var(--main-color1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+}
+
+.os-config-title {
+    display: block;
+    margin: auto auto 2rem auto;
+    font-size: 1.2rem;
+}
+
+.config-choices-container {
+    margin: 0 auto auto auto; 
+    display: grid;
+    grid-template-columns: 14rem 14rem;
+    grid-gap: 0.8rem;
+}
+
+.config-choice-item {
+    padding: 0.6rem 1.6rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    box-shadow: 0 0 0 0.1rem var(--main-color2);
+}
+
+.config-choice-item:hover {
+    background-color: var(--main-color2);
+    box-shadow: 0 0 0 0.1rem var(--main-color5);
+}
+
+.config-choice-item:active {
+    background-color: var(--main-color0);
+    box-shadow: 0 0 0 0.1rem var(--main-color3);
+}
+
+.config-choice-item span:nth-child(1) {
+    color: var(--color-status);
+    font-weight: 600;
+    display: block;
+}
+
+.config-choice-item span:nth-child(2) {
+    color: var(--color-sub-status);
+    font-size: 0.9;
+    display: block;
+}
+
+
+/* os config wallpaper */
+
+
+
+#os-config-wallpaper {
+    padding: 1rem;
+    /* padding-right: 0; */
+    /* background-color: var(--main-color0); */
+    background-color: var(--main-color1);
+    /* background-color: crimson; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+#os-config-wallpaper .os-config-title {
+    margin: 2rem auto 1.8rem auto;
+}
+
+.wallpaper-choice {
+    width: 100%;
+    display: grid;
+    background-color: var(--main-color0);
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+    overflow: auto;
+    padding: 1rem;
+    padding-right: 0.6rem;
+    overflow-x: hidden;
+    border-radius: 0.4rem 0 0 0.4rem;
+    /* height: ; */
+}
+
+
+.wallpaper-choice::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+.wallpaper-choice::-webkit-scrollbar-track {
+    background: var(--main-color0);
+}
+.wallpaper-choice::-webkit-scrollbar-thumb {
+    background: var(--main-color3);
+    border-radius: 0.4rem;
+}
+
+.wallpaper-choice-item {
+    cursor: pointer;
+}
+
+.wallpaper-choice-item img {
+    border-radius: 0.4rem;
+    width: 100%;
+    height: 10rem;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 0 0 0.1rem transparent;
+    opacity: 0.4;
+    transition: box-shadow 400ms, opacity 400ms;
+}
+
+.wallpaper-choice [type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.wallpaper-choice [type=radio]:checked + img {
+    box-shadow: 0 0 0 0.1rem var(--main-color7);
+    opacity: 1;
+}

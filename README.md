@@ -12,6 +12,6 @@ Currently **available in Portuguese**, available in **English in the future**;
 
 > simulating the interface of an operating system with web technologies (this is to be a portfolio)
 
-<h5 style="border-left: 0.25rem solid red; padding: 0.4rem 1rem; color: var(--color-text-tertiary);"> I'm a beginner developer.</h5>  
+<h5 style="border-left: 0.25rem solid red; padding: 0.4rem 1rem; color: var(--color-text-tertiary);"> I'm a beginner developer.</h5>
 
 <img src="https://data.whicdn.com/images/329013573/original.gif" style="display: block; border-radius: 0.8rem">

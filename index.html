@@ -74,9 +74,108 @@
 
             <div id="os-desktop">
 
+                <div id="desktop-context-menu">
+                    <div class="context-menu-item context-menu-window" data-window-name="os-config">
+                        <span>mudar papel de parede</span>
+                    </div>
+                    <div class="context-menu-item" onclick="alert('bom dia')">
+                        <span>bom dia</span>
+                    </div>
+                </div>
+
+
+
+
+                <div id="os-config" class="os-window">
+                    <div class="window-controls">
+                        <span>configurações</span>
+                        <span class="closeWindowSPAN" data-window-name="os-config">fechar</span>
+                    </div>
+
+
+
+                    <div class="os-config-grid">
+                        
+                        <div id="os-config-choice">
+                            <span class="os-config-title">configurações do sistema</span>
+                            <div class="config-choices-container">
+                                <div class="config-choice-item" data-config-name="os-config-wallpaper">
+                                    <span>papel de parede</span>
+                                    <span>alterar plano de fundo</span>
+                                </div>
+                                <div class="config-choice-item">
+                                    <span>opção</span>
+                                    <span>descrição da opção aqui</span>
+                                </div>
+                                <div class="config-choice-item">
+                                    <span>opção</span>
+                                    <span>descrição da opção aqui</span>
+                                </div>
+                                <div class="config-choice-item">
+                                    <span>opção</span>
+                                    <span>descrição da opção aqui</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div id="os-config-wallpaper">
+
+                            <span class="os-config-title">alterar plano de fundo do sistema</span>
+
+                            <div class="wallpaper-choice">
+
+                                <label class="wallpaper-choice-item">
+                                    <input type="radio" name="os-wallpaper-choice" value="https://i.pinimg.com/originals/47/0a/19/470a19a36904fe200610cc1f41eb00d9.jpg">
+                                    <img src="https://i.pinimg.com/originals/47/0a/19/470a19a36904fe200610cc1f41eb00d9.jpg">
+                                </label>
+    
+                                <label class="wallpaper-choice-item">
+                                    <input type="radio" name="os-wallpaper-choice" value="../assets/wallpaper.png">
+                                    <img src="../assets/wallpaper.png">
+                                </label>
+                            
+                                <label class="wallpaper-choice-item">
+                                    <input type="radio" name="os-wallpaper-choice" value="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
+                                    <img src="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
+                                </label>
+    
+                                <label class="wallpaper-choice-item">
+                                    <input type="radio" name="os-wallpaper-choice" value="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
+                                    <img src="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
+                                </label>
+
+                                <label class="wallpaper-choice-item">
+                                    <input type="radio" name="os-wallpaper-choice" value="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
+                                    <img src="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
+                                </label>
+    
+                                <label class="wallpaper-choice-item">
+                                    <input type="radio" name="os-wallpaper-choice" value="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
+                                    <img src="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
+                                </label>
+
+                            </div>        
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- <div id="noto-browser" class="os-window">
+                    <div class="window-controls">
+                        <span>Browser</span>
+                        <span class="closeWindowSPAN" data-window-name="noto-browser">fechar</span>
+                    </div>
+
+                    <div class="browser-grid">
+                        oba
+                    </div>
+                </div> -->
+
                 <div id="music-player" class="os-window">
                     <div class="window-controls">
-                        <span>Playlist</span>
+                        <span>playlist</span>
                         <span class="closeWindowSPAN" data-window-name="music-player">fechar</span>
                     </div>
 
@@ -90,7 +189,7 @@
 
                 <div id="notoryu-app" class="os-window">
                     <div class="window-controls">
-                        <span>Notoryu app</span>
+                        <span>notoryu app</span>
                         <span class="closeWindowSPAN" data-window-name="notoryu-app">fechar</span>
                     </div>
 
@@ -133,8 +232,8 @@
                                     </label>
 
                                     <label class="avatar-choice-item">
-                                        <input type="radio" name="notoryu-session-avatar-choice" value="https://media.discordapp.net/attachments/429362842890665986/802255497318105119/20210113_181929.jpg">
-                                        <img src="https://media.discordapp.net/attachments/429362842890665986/802255497318105119/20210113_181929.jpg">
+                                        <input type="radio" name="notoryu-session-avatar-choice" value="https://cdn.discordapp.com/attachments/429362842890665986/802516930833154049/image0.png">
+                                        <img src="https://cdn.discordapp.com/attachments/429362842890665986/802516930833154049/image0.png">
                                     </label>
 
                                     <label class="avatar-choice-item">
@@ -206,10 +305,10 @@
             </div>
 
             <div id="os-dock">
-                <button><img src="./assets/icons/browser.webp" alt="notoryu app"></button>
+                <button data-window-name="noto-browser"><img src="./assets/icons/browser.webp" alt="noto browser"></button>
                 <button><img src="./assets/icons/file-manager.png" alt="file manager"></button>
                 <button class="os-dock-button" data-window-name="notoryu-app"><img src="./assets/icons/lua.webp" alt="notoryu app"></button>
-                <button class="os-dock-button" data-window-name="music-player"><img src="./assets/icons/music.webp" alt="notoryu app"></button>
+                <button class="os-dock-button" data-window-name="music-player"><img src="./assets/icons/music.webp" alt="music player"></button>
             </div>
 
         </div>
@@ -222,6 +321,7 @@
     <script src="./load_os.js"></script>
     <script src="./rain.js"></script>
     <script src="./notoryu.js"></script>
+    <script src="./os_config.js"></script>
 
 
 </body>

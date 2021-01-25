@@ -1,6 +1,6 @@
 function OsWindowBehavior() {
 
-    this.windowsJquery = ["#music-player", "#notoryu-app"]
+    this.windowsJquery = ["#music-player", "#notoryu-app", "#noto-browser", "#os-config"]
     this.desktopSize = document.getElementById('os-desktop')
 
     // remove top 1s
@@ -15,7 +15,7 @@ function OsWindowBehavior() {
         $(window).draggable({
             containment: "#os-desktop",
             cursor: "crosshair",
-            cancel: '.iframe-overlay, .chat-input, .closeWindowSPAN, #chat-data',
+            cancel: '.iframe-overlay, .chat-input, .closeWindowSPAN, #chat-data, #os-config-wallpaper',
             start: function() {
                 $(this).css("transform", "scale(1.02)")
                 $(this).css("opacity", "0.8")
@@ -46,7 +46,7 @@ function OsWindowBehavior() {
     })
 
     // window control
-    $(".closeWindowSPAN, .os-dock-button").click(function() {
+    $(".closeWindowSPAN, .os-dock-button, .context-menu-window").click(function() {
         NOTOwb.openWindow($(this).data("window-name"))
     })
     // $(".os-dock-button").click(function() {

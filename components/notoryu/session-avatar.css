@@ -11,10 +11,10 @@
 .avatar-choice-item {
     height: max-content;
     width: max-content;
+    cursor: pointer;
 }
 
 .avatar-choice-item img {
-    cursor: pointer;
     border-radius: 0.4rem;
     width: 4.6rem;
     height: 4.6rem;

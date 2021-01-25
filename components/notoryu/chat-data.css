@@ -1,5 +1,4 @@
 #chat-data {
-    background-color: var(--main-color1);
     height: 30rem;
     padding: 0 1rem;
     display: flex;
@@ -89,6 +88,7 @@
 
 #chat-data-welcome img:nth-child(1) {
     width: 8rem;
+    opacity: 0.8;
     display: block;
     margin: auto auto 2rem auto;
 }

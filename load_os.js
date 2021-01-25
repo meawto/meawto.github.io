@@ -100,8 +100,42 @@ $(window).load(function () {
     $("#on-load").css("animation", "onLoadOpen 3s forwards")
     $('#session-username').css('top', '1rem')
     $('#session-username').css('opacity', '1')
-
+    
+    
     $('input[name="notoryu-session-avatar-choice"]').click(function(el) {
         NotoOS.session_avatar = el.target.getAttribute('value')
+    })
+    
+
+    $('#os-desktop').contextmenu(function(event) {
+        event.preventDefault()
+        
+        let desktopSize = [$('#os-desktop').outerWidth(), $('#os-desktop').outerHeight()]
+        let menu_position = [event.pageX - this.offsetLeft, event.pageY - this.offsetTop]
+        
+        if ((menu_position[0] + $('#desktop-context-menu').outerWidth()) > desktopSize[0]) {
+            $('#desktop-context-menu').css('left', (desktopSize[0] - $('#desktop-context-menu').outerWidth() - 8))
+        } else {
+            $('#desktop-context-menu').css('left', menu_position[0] + 12)
+        }
+        
+        if ((menu_position[1] + $('#desktop-context-menu').outerHeight()) > desktopSize[1]) {
+            $('#desktop-context-menu').css('top', (desktopSize[1] - $('#desktop-context-menu').outerHeight() - 8))
+        } else {
+            $('#desktop-context-menu').css('top', menu_position[1] + 12)
+        }
+        
+        $('#desktop-context-menu').css('z-index', '1')
+        $('#desktop-context-menu').css('opacity', '1') 
+    })
+
+    $(window).click(function(event) {
+        // let elem = event.target.parentElement
+        // if (!(elem.id == 'desktop-context-menu' || elem.className == 'context-menu-item')) {
+        // }
+        $('#desktop-context-menu').css('opacity', '0')
+        setTimeout(() => {
+            $('#desktop-context-menu').css('z-index', '-1')
+        }, 400)
     })
 })

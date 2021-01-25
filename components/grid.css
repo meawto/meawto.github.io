@@ -4,15 +4,23 @@
     display: flex;
     flex-direction: column;
     opacity: 0;
-}
-
-.container-desktop {
+    /* background-color: var(--main-color1); */
     background: url('../assets/wallpaper.png') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100%;
+}
+
+.container-desktop {
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    opacity: 1;
+    background: url('../assets/wallpaper.png') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    transition: opacity 600ms;
 }

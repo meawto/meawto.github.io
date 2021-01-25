@@ -8,6 +8,9 @@
 @import url("./dock.css");
 @import url("./taskbar.css");
 @import url("./desktop.css");
+@import url("./os-config.css");
+/* noto boawser */
+@import url("./noto-browser/noto-browser.css");
 /* notoryu */
 @import url("./notoryu/notoryu.css");
 @import url("./notoryu/chat-data.css");
@@ -37,10 +40,11 @@
     --second-font: 'Nunito', BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     /* colors */
     --dock-v1: rgba(63, 63, 63, 0.5);
-    --taskbar-v1: rgba(19, 19, 19, 0.2);
     --dock-btn-v1: rgba(19, 19, 19, 0.4);
+    --taskbar-v1: rgba(19, 19, 19, 0.2);
     --window-v1: rgb(28, 28, 28);
     --window-shadow-v1: rgba(19, 19, 19);
+    --context-menu-item: rgba(140, 140, 140, 0.2);
     /* font color */
     --color-name: rgb(190, 190, 190);
     --color-status: rgb(160, 160, 160);
@@ -97,7 +101,7 @@ button:active {
     margin-top: 2.6rem;
 }
 
-.tb-glow:active {
+.tb-glow:active, .config-navbar-item div:active {
     position: relative;
     top: 0.1rem;
 }
