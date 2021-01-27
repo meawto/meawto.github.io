@@ -11,6 +11,7 @@
     border-radius: 0.6rem 0.6rem 0 0;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.8);
+    background-color: var(--dock-v1);
     z-index: 3;
 }
 

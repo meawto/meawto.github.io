@@ -46,16 +46,20 @@ function OsWindowBehavior() {
     })
 
     // window control
-    $(".closeWindowSPAN, .os-dock-button, .context-menu-window").click(function() {
+    $(".closeWindowSPAN, .os-dock-button").click(function(el) {
         NOTOwb.openWindow($(this).data("window-name"))
     })
-    // $(".os-dock-button").click(function() {
-    //     NOTOwb.openWindow($(this).data("window-name"))
-    // })
 
 
-    this.openWindow = function(name) {
+    this.openWindow = function(name, behavior = 0) {
         let osWindow = document.getElementById(name)
+        
+        if (behavior) {
+            if (behavior.a == 'os-config') {
+                $('#os-config-choice').css('animation', 'hideConfig 600ms forwards')
+                $(`#${behavior.b}`).css('animation', 'showConfig 600ms forwards')
+            }
+        }
 
         if (!(osWindow.style.opacity == '1')) {
 
