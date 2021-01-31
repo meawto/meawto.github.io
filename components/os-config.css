@@ -75,12 +75,7 @@
 /* os config wallpaper */
 
 #os-config-wallpaper {
-    /* padding: 1rem; */
-    /* padding-top: 0; */
-    /* padding-right: 0; */
-    /* background-color: var(--main-color0); */
     background-color: var(--main-color1);
-    /* background-color: crimson; */
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -118,18 +113,17 @@
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 1rem;
+    grid-gap: 1.4rem;
     overflow: auto;
-    padding: 1rem;
-    padding-right: 0.6rem;
+    padding: 2rem;
+    padding-right: 1.2rem;
     overflow-x: hidden;
     border-radius: 0.4rem 0 0 0.4rem;
-    /* height: ; */
 }
 
 
 .wallpaper-choice::-webkit-scrollbar {
-    width: 0.4rem;
+    width: 0.8rem;
 }
 
 .wallpaper-choice::-webkit-scrollbar-thumb {

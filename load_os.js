@@ -38,16 +38,9 @@ function OSFunctions() {
     }
 
     this.checkEntry = function (e, elem) {
-        if (e.key == undefined) { 
-            return false
-        }
+        if (e.key == undefined) { return false }
 
         let k = e.key;
-
-        // if (k == 'Enter') {
-        //     this.saveUsername(elem.val())
-        //     e.preventDefault()
-        // }
 
         if (elem.val().length > 16) {
             return location.reload()
@@ -130,9 +123,6 @@ $(window).load(function () {
     })
 
     $(window).click(function(event) {
-        // let elem = event.target.parentElement
-        // if (!(elem.id == 'desktop-context-menu' || elem.className == 'context-menu-item')) {
-        // }
         $('#desktop-context-menu').css('opacity', '0')
         setTimeout(() => {
             $('#desktop-context-menu').css('z-index', '-1')

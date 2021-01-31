@@ -15,7 +15,7 @@ function OsWindowBehavior() {
         $(window).draggable({
             containment: "#os-desktop",
             cursor: "crosshair",
-            cancel: '.iframe-overlay, .chat-input, .closeWindowSPAN, #chat-data, #os-config-wallpaper',
+            cancel: '.iframe-overlay, .chat-input, .closeWindowSPAN, #chat-data, #os-config-wallpaper, .os-config-grid',
             start: function() {
                 $(this).css("transform", "scale(1.02)")
                 $(this).css("opacity", "0.8")
@@ -53,6 +53,10 @@ function OsWindowBehavior() {
 
     this.openWindow = function(name, behavior = 0) {
         let osWindow = document.getElementById(name)
+
+        if (osWindow == undefined) {
+            return alert('oi entao to com preguiça de fazer uma mensagem melhor. queria dizer que este aplicativo nao esta funcionando ainda ta bom tente outro')
+        }
         
         if (behavior) {
             if (behavior.a == 'os-config') {
@@ -69,11 +73,6 @@ function OsWindowBehavior() {
             setTimeout(() => { osWindow.style.opacity = '1' }, 400)
         } else {
             if (osWindow.style.zIndex == '1') {
-                // $(".os-window").css("z-index", "1")
-                // $(".os-window").css("filter", "grayscale(1)")
-
-                // osWindow.style.zIndex = '2'
-                // osWindow.style.filter = 'grayscale(0)'
                 osWindow.style.animation = ''
                 void osWindow.offsetHeight
                 osWindow.style.animation = 'showWindow 400ms'
@@ -111,6 +110,3 @@ function OsWindowBehavior() {
 }
 
 let NOTOwb = new OsWindowBehavior()
-
-// $(window).load(function() {
-// })

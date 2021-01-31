@@ -16,14 +16,12 @@ function OSwindowConfig() {
                 $('#os-taskbar').css('background-color', 'var(--taskbar-v2)')
                 $('#os-taskbar .tb-glow').css('color', 'var(--taskbar-black-text)')
 
-                // $('#os-dock').css('background-color', 'var(--dock-v2)')
                 $('#os-dock').css('box-shadow', 'var(--dock-shadow-v2)')
                 $('#os-dock .os-dock-button').css('background-color', 'var(--dock-btn-v2)')
             } else {
                 $('#os-taskbar').css('background-color', 'var(--taskbar-v1)')
                 $('#os-taskbar .tb-glow').css('color', 'var(--color-name)')
 
-                // $('#os-dock').css('background-color', 'var(--dock-v1)')
                 $('#os-dock').css('box-shadow', 'var(--dock-shadow-v1)')
                 $('#os-dock .os-dock-button').css('background-color', 'var(--dock-btn-v1)')
             }
@@ -45,12 +43,15 @@ function OSwindowConfig() {
         }, 200)
     }
     
-    $(".context-menu-window").click(function(el) {
+    $(".context-menu-window").click(function() {
         NOTOwb.openWindow($(this).data("window-name"), { a: 'os-config', b: 'os-config-wallpaper' })
     })
 
     $('.config-choice-item').click(function() {
-        NOTOConfig.openConfig({ hide: 'os-config-choice', show: $(this).data("config-name") })
+        theChoice = $(this).data("config-name")
+        if (theChoice) {
+            NOTOConfig.openConfig({ hide: 'os-config-choice', show: theChoice })
+        }
     })
 
     $(".os-config-menu").click(function() {

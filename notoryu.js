@@ -17,8 +17,10 @@ const choices = [
     [ ['como posso sugerir melhorias ou ideias para seus projetos?', 'eu queria poder ajudar'], ['você pode conversar comigo sobre isso no discord. Caso seja referente ao Noto OS ou outro projeto meu, é possível enviar issues no repositório do mesmo caso prefira']],
     [ ['queria perguntar como posso estar ajudando você e seus projetos... com dinheiro...'], ['fico feliz em ler isso e agradeço pela consideração, mas não posso aceitar por enquanto. Pretendo começar a desenvolver coisas legais para você (como jogos, ferramentas e etc), daí seria legal permitir doações para sempre melhorar os meus projetos',
         'mesmo que você insista em ajudar, eu não tenho ko-fi, patreon ou outra coisa que aceite essa ajuda. Não se preocupe, a sua ajuda com ideias e recomendações é tão valiosa quanto uma doação']],
-    [ ['por que será que a luna não liga para nós?'], ['para você eu não sei', 'no meu caso é porque ela é chata', 'ela provavelmente nem vai ler isso mesmo, depois eu tiro'] ],
-    [ ['irra'], ['psicopata'] ]
+    [ ['?', 'uma frase sua'], ['mochi piadocas'] ],
+    [ ['irra'], ['psicopata'] ],
+    [ ['como assim pae', 'tendi n'], ['bobão'] ],
+    [ ['Nao tenho'], ['👍'] ]
 ]
 
 const chat = $('#chat-data')
