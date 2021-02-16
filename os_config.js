@@ -40,7 +40,7 @@ function OSwindowConfig() {
             void $(`#${data.show}`).outerHeight()
             $(`#${data.hide}`).css('animation', 'hideConfig 800ms forwards')
             $(`#${data.show}`).css('animation', 'showConfig 800ms forwards')
-        }, 200)
+        }, 50)
     }
     
     $(".context-menu-window").click(function() {

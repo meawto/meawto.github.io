@@ -128,11 +128,15 @@
 
 .wallpaper-choice::-webkit-scrollbar-thumb {
     background: var(--window-v1);
-    border-radius: 0.4rem;
 }
 
 .wallpaper-choice-item {
     cursor: pointer;
+}
+
+.wallpaper-choice-item:hover img {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .wallpaper-choice-item img {
@@ -141,9 +145,10 @@
     height: 10rem;
     display: block;
     object-fit: cover;
+    transform: scale(0.98);
     box-shadow: 0 0 0 0.1rem transparent;
-    opacity: 0.4;
-    transition: box-shadow 400ms, opacity 400ms;
+    opacity: 0.6;
+    transition: box-shadow 200ms, opacity 200ms, transform 200ms;
 }
 
 .wallpaper-choice [type=radio] {

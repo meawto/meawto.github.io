@@ -4,7 +4,7 @@
     flex-direction: column;
     width: 34rem;
     /* height: 40rem; */
-    border-radius: 0.4rem;
+    border-radius: 0.25rem;
     overflow: hidden;
     font-family: var(--second-font);
 }

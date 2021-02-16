@@ -8,7 +8,7 @@ const choices = [
     [ ['e a sua experiência?', 'você já trabalhou na área de desenvolvimento?'], 
         ['completei um curso Técnico em Informática para Internet na ETEC, e fui um dos melhores alunos. também completei um estágio na secretaria da saúde na minha cidade, onde me destaquei com algorítmos que me ajudaram (e muito) nas minhas tarefas',
         'sobre sua segunda pergunta: ainda não'] ],
-    [ ['quais são seus conhecimentos?', 'me refiro as coisas que você atualmente estuda sobre e/ou tem experiência para trabalhar'],
+    [ ['quais são seus conhecimentos?', 'me refiro sobre o que você estuda ou tem experiência'],
     ['basicamente:\n- Adobe (Photoshop, Premiere e After Effects);\n- Office (Word, Outlook, Teams e Excel);\n- Informática (Montagem e manutenção de computadores, detecção e correção de problemas nos computadores e instalação e configuração de redes e softwares);\n- desenvolvedor (front-end, back-end, servidor e banco de dados);',
         'e as linguagens de desenvolvimento:\nhtml, css, javascript (também uso nodejs), php, python e mysql', 'pretendo começar a trabalhar com frameworks, principalmente react. sim, eu não uso frameworks para criar meus trabalhos. o belo motivo que tenho é porque amo digitar, mas conheço bem o poder dos frameworks e por isso pretendo dominá-los'] ],
     [ ['como posso me comunicar com você?'], ['minha preferência é pelo discord: meawto#3269', 'mas se preferir, aqui estão algumas redes sociais minhas:\ntwitter <a href="https://twitter.com/meawtooo" target="_blank">@meawtooo</a>\ninstagram <a href="https://www.instagram.com/milltwoo/" target="_blank">@milltwoo</a>']],

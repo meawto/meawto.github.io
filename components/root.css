@@ -115,7 +115,7 @@ button:active {
     margin-top: 2.6rem;
 }
 
-.tb-glow:active, .config-navbar-item div:active {
+.tb-glow:active, .config-navbar-item div:active, .window-controls span:active, .os-config-menu:active {
     position: relative;
     top: 0.1rem;
 }
