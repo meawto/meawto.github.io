@@ -1,6 +1,6 @@
 function OSwindowConfig() {
 
-    $('input[name="os-wallpaper-choice"]').click(function() {
+    $('input[name="config-wallpaper-choice"]').click(function() {
         NOTOConfig.changeWallpaper({ img: $(this).attr('value'), color: ($(this).data("color") ? $(this).data("color") : 0) })
     })
 
@@ -44,20 +44,35 @@ function OSwindowConfig() {
     }
     
     $(".context-menu-window").click(function() {
-        NOTOwb.openWindow($(this).data("window-name"), { a: 'os-config', b: 'os-config-wallpaper' })
+        NOTOwb.openWindow($(this).data("window-name"), { a: 'os-config', b: 'os-config-appearance' })
     })
 
     $('.config-choice-item').click(function() {
         theChoice = $(this).data("config-name")
         if (theChoice) {
+            $('#config-choice-title').css('opacity', '1')
+            $('.config-choice-title-overlay').css('display', 'none')
             NOTOConfig.openConfig({ hide: 'os-config-choice', show: theChoice })
         }
     })
 
     $(".os-config-menu").click(function() {
         // NOTOwb.openWindow($(this).data("window-name"))
+
+        $('#config-choice-title').css('opacity', '0')
+        $('.config-choice-title-overlay').css('display', 'block')
         NOTOConfig.openConfig({ hide: $(this).data("config-name"), show: 'os-config-choice'})
-    }) 
+    })
+
+    $('.appearance-choice-item').click(function() {
+        elems = $(this).data("appearance-choice").split(';')
+
+        $(this).css('background-color', 'var(--main-color1)')
+        $('.appearance-choice-item').not(this).css('background-color', 'var(--window-v1)')
+
+        $(`#${elems[0]}`).css('display', 'grid')
+        $(`#${elems[1]}`).css('display', 'none')
+    })
 
 }
 

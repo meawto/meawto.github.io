@@ -61,7 +61,7 @@
 
             <div id="os-taskbar">
                 <div class="taskbar-apps">
-                    <span class="tb-glow">Iniciar</span>
+                    <span class="tb-glow">iniciar</span>
                 </div>
                 <div class="taskbar-time">
                     <span id="os-datetime" class="tb-glow">data aqui</span>
@@ -87,7 +87,7 @@
 
                 <div id="os-config" class="os-window">
                     <div class="window-controls">
-                        <span>configurações</span>
+                        <span class="window-controls-name">configurações</span>
                         <span class="closeWindowSPAN" data-window-name="os-config">
                             <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.70711 8.00001L13.3536 3.35356L12.6465 2.64645L8.00001 7.2929L3.35356 2.64645L2.64645 3.35356L7.2929 8.00001L2.64645 12.6465L3.35356 13.3536L8.00001 8.70711L12.6465 13.3536L13.3536 12.6465L8.70711 8.00001Z" fill="#FFFFFF"></path></svg>
                         </span>
@@ -98,9 +98,9 @@
                         <div id="os-config-choice">
                             <span class="os-config-title">configurações do sistema</span>
                             <div class="config-choices-container">
-                                <div class="config-choice-item" data-config-name="os-config-wallpaper">
-                                    <span>plano de fundo</span>
-                                    <span>alterar plano de fundo</span>
+                                <div class="config-choice-item" data-config-name="os-config-appearance">
+                                    <span>aparência</span>
+                                    <span>papel de parede e tema</span>
                                 </div>
                                 <div class="config-choice-item" data-config-name="">
                                     <span>opção</span>
@@ -118,62 +118,78 @@
                         </div>
 
                         
-                        <div id="os-config-wallpaper">
+                        <div id="os-config-appearance">
 
-                            <!-- <span class="os-config-title">alterar plano de fundo do sistema</span> -->
+                            <div class="config-appearance-choice">
+                                <div class="appearance-choice-item" data-appearance-choice="config-wallpaper;config-theme">
+                                    <span class="appearance-item-span">plano de fundo</span>
+                                </div>
+                                <div class="appearance-choice-item" data-appearance-choice="config-theme;config-wallpaper">
+                                    <span class="appearance-item-span">tema</span>
+                                </div>
+                            </div>
 
-                            <div class="wallpaper-choice" tabindex="-1">
+                            <div id="config-theme">
+                                nadaaa aa a anadaaa aa a anadaaa aa a a
+                            </div>
+
+                            <div id="config-wallpaper">
 
                                 <label class="wallpaper-choice-item">
-                                    <input type="radio" name="os-wallpaper-choice" value="../assets/wallpaper.png" checked>
+                                    <input type="radio" name="config-wallpaper-choice" value="../assets/wallpaper.png" checked>
                                     <img src="../assets/wallpaper.png">
                                 </label>
 
                                 <label class="wallpaper-choice-item">
-                                    <input type="radio" name="os-wallpaper-choice" value="./assets/wallpaper_meaw.png" data-color='white'>
+                                    <input type="radio" name="config-wallpaper-choice" value="./assets/wallpaper_meaw.png" data-color='white'>
                                     <img src="./assets/wallpaper_meaw.png">
                                 </label>
                             
                                 <label class="wallpaper-choice-item">
-                                    <input type="radio" name="os-wallpaper-choice" value="./assets/predo.png">
+                                    <input type="radio" name="config-wallpaper-choice" value="./assets/predo.png">
                                     <img src="./assets/predo.png">
                                 </label>
     
                                 <label class="wallpaper-choice-item">
-                                    <input type="radio" name="os-wallpaper-choice" value="./assets/foto_meaw1.jpg">
+                                    <input type="radio" name="config-wallpaper-choice" value="./assets/foto_meaw1.jpg">
                                     <img src="./assets/foto_meaw1.jpg">
                                 </label>
 
                                 <label class="wallpaper-choice-item">
-                                    <input type="radio" name="os-wallpaper-choice" value="./assets/foto_meaw3.jpg">
+                                    <input type="radio" name="config-wallpaper-choice" value="./assets/foto_meaw3.jpg">
                                     <img src="./assets/foto_meaw3.jpg">
                                 </label>
     
                                 <label class="wallpaper-choice-item">
-                                    <input type="radio" name="os-wallpaper-choice" value="./assets/foto_meaw4.jpg" data-color='white'>
+                                    <input type="radio" name="config-wallpaper-choice" value="./assets/foto_meaw4.jpg" data-color='white'>
                                     <img src="./assets/foto_meaw4.jpg">
                                 </label>
 
                                 <label class="wallpaper-choice-item">
-                                    <input type="radio" name="os-wallpaper-choice" value="./assets/foto_meaw2.jpg" data-color='white'>
+                                    <input type="radio" name="config-wallpaper-choice" value="./assets/foto_meaw2.jpg" data-color='white'>
                                     <img src="./assets/foto_meaw2.jpg">
                                 </label>
     
                                 <label class="wallpaper-choice-item">
-                                    <input type="radio" name="os-wallpaper-choice" value="./assets/foto_meaw5.jpg" data-color='white'>
+                                    <input type="radio" name="config-wallpaper-choice" value="./assets/foto_meaw5.jpg" data-color='white'>
                                     <img src="./assets/foto_meaw5.jpg">
                                 </label>
-
                             </div>   
-                            
-                            <div class="config-choice-title">
-                                <span>plano de fundo</span>
-                                <span class="os-config-menu" data-config-name="os-config-wallpaper">início</span>
-                            </div>
                         </div>
-
                     </div>
 
+                    <div class="window-controls" id="config-choice-title">
+                        <span class="window-controls-name">aparência do sistema</span>
+                        <span class="os-config-menu" data-config-name="os-config-appearance">
+                            início
+                        </span>
+                        <div class="config-choice-title-overlay"></div>
+                    </div>
+
+                    <!-- <div id="config-choice-title">
+                        <span>aparência do sistema</span>
+                        <span class="os-config-menu" data-config-name="os-config-appearance">início</span>
+                    </div> -->
                 </div>
 
                 <!-- <div id="noto-browser" class="os-window">
@@ -189,7 +205,7 @@
 
                 <div id="music-player" class="os-window">
                     <div class="window-controls">
-                        <span>playlist</span>
+                        <span class="window-controls-name">playlist</span>
                         <span class="closeWindowSPAN" data-window-name="music-player">
                             <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.70711 8.00001L13.3536 3.35356L12.6465 2.64645L8.00001 7.2929L3.35356 2.64645L2.64645 3.35356L7.2929 8.00001L2.64645 12.6465L3.35356 13.3536L8.00001 8.70711L12.6465 13.3536L13.3536 12.6465L8.70711 8.00001Z" fill="#FFFFFF"></path></svg>
                         </span>
@@ -205,7 +221,7 @@
 
                 <div id="notoryu-app" class="os-window">
                     <div class="window-controls">
-                        <span>notoryu app</span>
+                        <span class="window-controls-name">notoryu app</span>
                         <span class="closeWindowSPAN" data-window-name="notoryu-app">
                             <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.70711 8.00001L13.3536 3.35356L12.6465 2.64645L8.00001 7.2929L3.35356 2.64645L2.64645 3.35356L7.2929 8.00001L2.64645 12.6465L3.35356 13.3536L8.00001 8.70711L12.6465 13.3536L13.3536 12.6465L8.70711 8.00001Z" fill="#FFFFFF"></path></svg>
                         </span>

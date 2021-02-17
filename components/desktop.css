@@ -27,7 +27,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* height: 3rem; */
+    opacity: 1;
+    transition: opacity 1s;
 }
 
 .window-controls span {

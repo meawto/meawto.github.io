@@ -15,7 +15,7 @@ function OsWindowBehavior() {
         $(window).draggable({
             containment: "#os-desktop",
             cursor: "crosshair",
-            cancel: '.iframe-overlay, .chat-input, .closeWindowSPAN, #chat-data, #os-config-wallpaper, .os-config-grid',
+            cancel: '.iframe-overlay, .chat-input, .closeWindowSPAN, #chat-data, #os-config-wallpaper, .os-config-grid, .window-controls-name, .os-config-menu',
             start: function() {
                 $(this).css("transform", "scale(1.02)")
                 $(this).css("opacity", "0.8")

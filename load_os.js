@@ -130,4 +130,11 @@ $(window).load(function () {
             $('#desktop-context-menu').css('z-index', '-1')
         }, 400)
     })
+
+    // block tabindex (tab)
+    $(document).keydown( (e) => {
+        if( e.key == 'Tab' ) {
+            e.preventDefault()
+        }
+    } );
 })
