@@ -2,7 +2,7 @@ var elemDatetime = document.getElementById('os-datetime')
 function OSFunctions() {
 
     this.session_username
-    this.session_avatar = 'https://media.discordapp.net/attachments/779341443285516288/784133874665127946/image0.gif'
+    this.session_avatar = './assets/korona.gif'
     this.windowReady
 
     this.osDateNow = function () {

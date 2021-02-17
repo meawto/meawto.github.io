@@ -1,16 +1,20 @@
+function getAge() {
+    return  Math.abs(new Date(Date.now() - (new Date('11/23/2002').getTime())).getUTCFullYear() - 1970)
+}
+
 const choices = [ 
     [ ['oi'], ['oi'] ],
     [ ['meaw, você pode comentar sobre você?'], 
-    ['me reconheça como meawto. tenho {data aqui (ainda vou colocar tá bom)} anos atualmente. Sou brasileiro e vivo no interior de São Paulo',
+    [`me reconheça como meawto. tenho ${getAge()} anos atualmente. Sou brasileiro e vivo no interior de São Paulo`,
         'comecei meus estudos como desenvolvedor no final de 2018 e minha atuação como designer começou no final de 2015, estou gostando muito de estudar para melhorar cada vez mais meus conhecimentos e minhas habilidades',
         'os meus estudos sérios começaram na metade de 2019, quando entrei para a escola técnica estadual. me considero muito criativo e, sempre que consigo, me dedico ao máximo nos meus estudos e projetos',
-        'gosto muito de gatinhos, chuva, sorvete, frio, climas nublados, café e principalmente da noite. Um dos seus principais desejos é morar sozinho, conseguir se manter e comprar carros para dirigir de madrugada ou quando houver chuva'] ],
+        'gosto muito de gatinhos, chuva, sorvete, frio, climas nublados, café e principalmente da noite. Um dos meus principais desejos é morar sozinho, conseguir me manter financeiramente e comprar carros para dirigir de madrugada ou quando houver chuva'] ],
     [ ['e a sua experiência?', 'você já trabalhou na área de desenvolvimento?'], 
-        ['completei um curso Técnico em Informática para Internet na ETEC, e fui um dos melhores alunos. também completei um estágio na secretaria da saúde na minha cidade, onde me destaquei com algorítmos que me ajudaram (e muito) nas minhas tarefas',
+        ['completei um curso Técnico em Informática para Internet na ETEC, e fui um dos melhores alunos. também completei um estágio na secretaria da saúde na minha cidade, onde me destaquei com algorítmos que me ajudaram (e muito) nas minhas tarefas. Atualmente estou cursando Sistemas para Internet na FATEC',
         'sobre sua segunda pergunta: ainda não'] ],
     [ ['quais são seus conhecimentos?', 'me refiro sobre o que você estuda ou tem experiência'],
     ['basicamente:\n- Adobe (Photoshop, Premiere e After Effects);\n- Office (Word, Outlook, Teams e Excel);\n- Informática (Montagem e manutenção de computadores, detecção e correção de problemas nos computadores e instalação e configuração de redes e softwares);\n- desenvolvedor (front-end, back-end, servidor e banco de dados);',
-        'e as linguagens de desenvolvimento:\nhtml, css, javascript (também uso nodejs), php, python e mysql', 'pretendo começar a trabalhar com frameworks, principalmente react. sim, eu não uso frameworks para criar meus trabalhos. o belo motivo que tenho é porque amo digitar, mas conheço bem o poder dos frameworks e por isso pretendo dominá-los'] ],
+        'e as linguagens de desenvolvimento que estudo são:\nhtml, css, javascript, php e python', 'pretendo começar a trabalhar com frameworks, principalmente react. sim, eu não uso frameworks para criar meus trabalhos. o belo motivo que tenho é porque amo digitar, mas conheço bem o poder dos frameworks e por isso pretendo dominá-los'] ],
     [ ['como posso me comunicar com você?'], ['minha preferência é pelo discord: meawto#3269', 'mas se preferir, aqui estão algumas redes sociais minhas:\ntwitter <a href="https://twitter.com/meawtooo" target="_blank">@meawtooo</a>\ninstagram <a href="https://www.instagram.com/milltwoo/" target="_blank">@milltwoo</a>']],
     [ ['meaw, você prefere café com açúcar ou sem?'], ['então... eu prefiro com açúcar, mas minha preferência é com pouco açúcar para sentir melhor o gosto do café'] ],
     [ ['216158'], ['esse é bom', 'emoji aqui'] ],
