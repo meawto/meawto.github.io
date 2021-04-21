@@ -98,6 +98,15 @@ $(window).load(function () {
     $('input[name="notoryu-session-avatar-choice"]').click(function(el) {
         NotoOS.session_avatar = el.target.getAttribute('value')
     })
+
+    bgIndex = [...Array(16).keys()]
+    bgIndex.forEach(pic => {
+        $('#config-wallpaper').append(`<label class="wallpaper-choice-item"> <input tabindex="-1" type="radio" name="config-wallpaper-choice" value="./assets/bg/${pic + 1}.jpeg"> <img src="./assets/bg/${pic + 1}.jpeg"> </label>`)
+    });
+
+    $('input[name="config-wallpaper-choice"]').click(function() {
+        NOTOConfig.changeWallpaper({ img: $(this).attr('value') })
+    })
     
 
     $('#os-desktop').contextmenu(function(event) {
@@ -119,7 +128,7 @@ $(window).load(function () {
                 $('#desktop-context-menu').css('top', menu_position[1] + 12)
             }
             
-            $('#desktop-context-menu').css('z-index', '1')
+            $('#desktop-context-menu').css('z-index', '3')
             $('#desktop-context-menu').css('opacity', '1') 
         }
     })

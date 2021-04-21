@@ -51,6 +51,8 @@
     height: max-content;
     padding: 0 0.4rem;
     margin: auto 0.4rem;
+    font-size: 1rem;
+    font-weight: 600;
     border-radius: 0.4rem;
     cursor: pointer;
     border: 0.16rem dashed transparent;
@@ -112,6 +114,9 @@
 
 #input-user-message div {
     margin: auto 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-sub-status)
 }
 
 #input-blinking-cursor {

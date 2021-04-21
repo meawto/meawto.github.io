@@ -1,6 +1,6 @@
 #os-taskbar {
-    /* backdrop-filter: blur(10px); */
-    background-color: var(--taskbar-v1);
+    backdrop-filter: blur(2rem);
+    background-color: var(--dock-v1);
     padding: 0.4rem 1rem;
     display: flex;
     flex-direction: row;
@@ -21,12 +21,16 @@
     display: flex;
     color: var(--color-name);
     opacity: 0.8;
-    transition: opacity 200ms;
+    transition: opacity 200ms, letter-spacing 200ms ease, text-shadow 200ms;
     align-items: center;
+    font-weight: 600;
+    font-family: var(--second-font);
 }
 
 .tb-glow:hover {
     opacity: 1;
+    letter-spacing: 0.04rem;
+    text-shadow: 0 0 0.4rem rgba(255, 255, 255, 0.2);
 }
 
 .taskbar-info img {

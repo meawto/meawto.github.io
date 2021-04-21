@@ -1,9 +1,5 @@
 function OSwindowConfig() {
 
-    $('input[name="config-wallpaper-choice"]').click(function() {
-        NOTOConfig.changeWallpaper({ img: $(this).attr('value'), color: ($(this).data("color") ? $(this).data("color") : 0) })
-    })
-
     this.changeWallpaper = function(data) {
         let img = data.img
 
@@ -12,19 +8,7 @@ function OSwindowConfig() {
         $('.container-desktop').css('opacity', '0')
         setTimeout(()=>{
             $('.container-desktop').css('background-image', `url("${img}")`)
-            if (data.color == 'white') {
-                $('#os-taskbar').css('background-color', 'var(--taskbar-v2)')
-                $('#os-taskbar .tb-glow').css('color', 'var(--taskbar-black-text)')
 
-                $('#os-dock').css('box-shadow', 'var(--dock-shadow-v2)')
-                $('#os-dock .os-dock-button').css('background-color', 'var(--dock-btn-v2)')
-            } else {
-                $('#os-taskbar').css('background-color', 'var(--taskbar-v1)')
-                $('#os-taskbar .tb-glow').css('color', 'var(--color-name)')
-
-                $('#os-dock').css('box-shadow', 'var(--dock-shadow-v1)')
-                $('#os-dock .os-dock-button').css('background-color', 'var(--dock-btn-v1)')
-            }
             setTimeout(()=>{
                 $('.container-desktop').css('opacity', '1')
             }, 500)

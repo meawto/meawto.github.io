@@ -22,6 +22,7 @@
 #on-load img {
     display: block;
     margin-bottom: 1.8rem;
+    width: 6rem;
     z-index: 4;
 }
 
@@ -40,10 +41,12 @@
     width: 24rem;
     border-radius: 0.4rem;
     text-align: center;
+    font-size: 1rem;
     padding: 1rem 2rem;
     font-family: var(--main-font);
     color: var(--color-name);
     position: relative;
+    font-weight: 600;
     top: 16rem;
     opacity: 0;
     transition: top 2s, opacity 3s;
@@ -52,6 +55,7 @@
 #on-load form input[type="text"]::placeholder {
     color: var(--color-sub-status);
     transition: color 400ms;
+    font-size: 1rem;
 }
 
 #on-load form input[type="text"]:focus::placeholder {
@@ -71,6 +75,7 @@
     padding: 1rem 2rem;
     font-family: var(--second-font);
     position: absolute;
+    font-size: 1.4rem;
     margin-top: 2.4rem;
     top: 14rem;
 }

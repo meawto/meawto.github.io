@@ -36,29 +36,24 @@
     --main-color6: #3f3f3f;
     --main-color7: #c2c2c2;
     --main-color8: #eeeeee;
+
     --main-font: 'Spartan', BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --second-font: 'Nunito', BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     /* colors v1 */
-    --dock-v1: rgba(63, 63, 63, 0.2);
-    --dock-btn-v1: rgba(19, 19, 19, 0.4);
-    --dock-shadow-v1: 0 0 2rem rgba(0, 0, 0, 0.8);
+    --dock-v1: rgba(0, 0, 0, 0.4);
+    --dock-btn-v1: rgba(0, 0, 0, 0.2);
+    --dock-btn-v2: rgba(255, 255, 255, 0.2);
+    --dock-shadow-v1: 0 0.4rem 2rem rgba(0, 0, 0, 0.6);
     --taskbar-v1: rgba(19, 19, 19, 0.2);
     --window-v1: rgb(28, 28, 28);
-    --window-shadow-v1: rgba(19, 19, 19);
-    --context-menu-item: rgba(140, 140, 140, 0.2);
-
-    /* colors v2 */
-    --taskbar-v2: rgba(19, 19, 19, 0.3);
-    --taskbar-black-text: rgb(228, 228, 228);
-    /* --dock-v2: rgba(63, 63, 63, 0.2); */
-    --dock-btn-v2: rgba(19, 19, 19, 0.2);
-    --dock-shadow-v2: 0 0 2rem rgba(0, 0, 0, 0.4);
+    --window-shadow-v1: rgba(19, 19, 19, 0.6);
+    --context-menu-item: rgba(255, 255, 255, 0.1);
 
     /* font color */
     --color-name: rgb(190, 190, 190);
     --color-status: rgb(160, 160, 160);
-    --color-sub-status: rgb(117, 117, 117);
+    --color-sub-status: rgb(130, 130, 130);
     /* size config */
     font-size: 16px;
 }

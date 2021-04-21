@@ -49,16 +49,17 @@
 .mc-user-info {
     display: flex;
     flex-direction: column;
+    font-weight: 600;
 }
 
 .mc-user-info span:nth-child(1) {
-    color: white;
+    color: var(--color-name);
     margin-top: 0.4rem;
     font-size: 1rem;
 }
 
 .mc-user-info span:nth-child(2) {
-    color: var(--color-status);
+    color: var(--color-sub-status);
     word-break: break-word;
     font-size: 1rem;
     user-select: text;
@@ -106,10 +107,13 @@
 .welcome-span span:nth-child(1) {
     /* margin-bottom: 0.4rem; */
     font-size: 1.2rem;
+    font-weight: 600;
     color: var(--color-status);
 }
 
 .welcome-span span:nth-child(2) {
     /* margin-bottom: 0; */
     color: var(--color-sub-status);
+    font-weight: 600;
+    font-size: 1rem;
 }

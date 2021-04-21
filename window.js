@@ -38,6 +38,11 @@ function OsWindowBehavior() {
         $(".os-window").not(this).css("transform", "scale(0.98)")
         $(".os-window .iframe-container .iframe-overlay").not(this).css("display", "block")
 
+        $('.os-dock-button').css("background-color", "var(--dock-btn-v1)")
+
+
+        $('#os-dock').find(`[data-window-name='${$(this).attr("id")}']`).css("background-color", "var(--dock-btn-v2)")
+
         $(this).css("z-index", "2")
         $(this).css("filter", "grayscale(0)")
         $(this).css("box-shadow", "0 10px 30px var(--window-shadow-v1)")
@@ -47,11 +52,11 @@ function OsWindowBehavior() {
 
     // window control
     $(".closeWindowSPAN, .os-dock-button").click(function(el) {
-        NOTOwb.openWindow($(this).data("window-name"))
+        NOTOwb.openWindow($(this).data("window-name"), 0, $(this))
     })
 
 
-    this.openWindow = function(name, behavior = 0) {
+    this.openWindow = function(name, behavior = 0, btn = undefined) {
         let osWindow = document.getElementById(name)
 
         if (osWindow == undefined) {
@@ -65,10 +70,17 @@ function OsWindowBehavior() {
             }
         }
 
+        $('.os-dock-button').css("background-color", "var(--dock-btn-v1)")
+
         if (!(osWindow.style.opacity == '1')) {
 
             osWindow.style.left = (this.desktopSize.offsetWidth / 2 - osWindow.offsetWidth / 2) + 'px'
             osWindow.style.top = (this.desktopSize.offsetHeight / 2 - osWindow.offsetHeight / 2) + 'px'
+
+            if (btn && btn.attr('class') == 'os-dock-button') {
+                btn.css("border-bottom", "0.2rem solid white")
+                btn.css("background-color", "var(--dock-btn-v2)")
+            }
 
             setTimeout(() => { osWindow.style.opacity = '1' }, 400)
         } else {
@@ -76,8 +88,14 @@ function OsWindowBehavior() {
                 osWindow.style.animation = ''
                 void osWindow.offsetHeight
                 osWindow.style.animation = 'showWindow 400ms'
+                btn.css("background-color", "var(--dock-btn-v2)")
+                btn.css("border-bottom", "0.2rem solid white")
             } else {
                 this.closeWindow(name)
+                if (btn && btn.attr('class') == 'os-dock-button') {
+                    btn.css("border-bottom", "0.2rem solid transparent")
+                    btn.css("background-color", "var(--dock-btn-v1)")
+                }
             }
         }
 
@@ -106,6 +124,9 @@ function OsWindowBehavior() {
         osWindow.style.transition = 'opacity 400ms, top 1s ease, filter 400ms, box-shadow 200ms, transform 100ms'
         osWindow.style.opacity = '0'
         osWindow.style.top = this.desktopSize.offsetHeight + 'px'
+
+
+        $('#os-dock').find(`[data-window-name='${name}']`).css("border-bottom", "0.2rem solid transparent")
     }
 }
 
