@@ -1,3 +1,6 @@
 função de brilho:
 -	possibilidade de alterar a opacidade de uma div com posição absoluta para simular efeito de brilho no sistema operacional
 
+explorador de arquivos:
+- array = ['pasta', 'pasta', 'pasta']
+- array[ultima pasta] = pasta a ser exibida 

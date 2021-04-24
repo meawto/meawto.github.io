@@ -101,13 +101,18 @@ $(window).load(function () {
 
     bgIndex = [...Array(16).keys()]
     bgIndex.forEach(pic => {
-        $('#config-wallpaper').append(`<label class="wallpaper-choice-item"> <input tabindex="-1" type="radio" name="config-wallpaper-choice" value="./assets/bg/${pic + 1}.jpeg"> <img src="./assets/bg/${pic + 1}.jpeg"> </label>`)
+        $('#config-wallpaper').append(`<label class="wallpaper-choice-item"> <input tabindex="-1" type="radio" name="config-wallpaper-choice" value="${pic + 1}"> <img src="./assets/bg/${pic + 1}.jpeg"> </label>`)
     });
 
     $('input[name="config-wallpaper-choice"]').click(function() {
         NOTOConfig.changeWallpaper({ img: $(this).attr('value') })
     })
-    
+
+
+    // $('.container-desktop').css('background-image', `url("./assets/bg/${bgIndex[((Math.random() * bgIndex.length) | 0)+1]}.jpeg")`)
+    // NOTOConfig.changeWallpaper({ img: bgIndex[((Math.random() * bgIndex.length) | 0)+1] })
+    NOTOConfig.changeWallpaper({ img: bgIndex[Math.floor(Math.random() * bgIndex.length)] })
+
 
     $('#os-desktop').contextmenu(function(event) {
         event.preventDefault()
@@ -128,7 +133,7 @@ $(window).load(function () {
                 $('#desktop-context-menu').css('top', menu_position[1] + 12)
             }
             
-            $('#desktop-context-menu').css('z-index', '3')
+            $('#desktop-context-menu').css('z-index', '4')
             $('#desktop-context-menu').css('opacity', '1') 
         }
     })

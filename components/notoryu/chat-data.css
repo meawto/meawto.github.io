@@ -28,6 +28,10 @@
     margin-top: 1rem;
 }
 
+#chat-data strong {
+    color: var(--color-status);
+}
+
 
 /* message container */
 .message-wrapper-container {
@@ -71,7 +75,7 @@
     height: 3rem;
     display: block;
     object-fit: cover;
-    border-radius: 0.4rem;
+    border-radius: 0.24rem;
     margin-right: 0.6rem;
 }
 
@@ -88,7 +92,7 @@
 }
 
 #chat-data-welcome img:nth-child(1) {
-    width: 8rem;
+    width: 6rem;
     opacity: 0.8;
     display: block;
     margin: auto auto 2rem auto;

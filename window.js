@@ -88,8 +88,10 @@ function OsWindowBehavior() {
                 osWindow.style.animation = ''
                 void osWindow.offsetHeight
                 osWindow.style.animation = 'showWindow 400ms'
-                btn.css("background-color", "var(--dock-btn-v2)")
-                btn.css("border-bottom", "0.2rem solid white")
+                if (btn) {
+                    btn.css("background-color", "var(--dock-btn-v2)")
+                    btn.css("border-bottom", "0.2rem solid white")
+                }
             } else {
                 this.closeWindow(name)
                 if (btn && btn.attr('class') == 'os-dock-button') {

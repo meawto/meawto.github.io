@@ -132,5 +132,5 @@
 }
 
 .context-menu-item:active {
-    background-color: var(--dock-v1);
+    background-color: var(--dock-btn-v2);
 }

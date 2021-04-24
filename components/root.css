@@ -130,18 +130,57 @@ screen and (max-height: 580px) {
      :root {
         font-size: 10px;
     }
+
+    #os-dock button {
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    #os-dock button img {
+        width: 3rem;
+    }
+
+    #os-taskbar {
+        font-size: 1.4rem;
+    }
 }
 
 @media screen and (max-width: 340px),
 screen and (max-height: 540px) {
      :root {
-        font-size: 9px;
+        font-size: 8px;
+    }
+
+    #os-dock button {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    #os-dock button img {
+        width: 4rem;
+    }
+
+    #os-taskbar {
+        font-size: 1.6rem;
     }
 }
 
 @media screen and (max-width: 290px),
 screen and (max-height: 500px) {
      :root {
-        font-size: 8px;
+        font-size: 7px;
+    }
+
+    #os-dock button {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    #os-dock button img {
+        width: 5rem;
+    }
+
+    #os-taskbar {
+        font-size: 2rem;
     }
 }

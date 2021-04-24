@@ -1,13 +1,35 @@
 function OSwindowConfig() {
 
     this.changeWallpaper = function(data) {
-        let img = data.img
+        const imgConfig = {
+            1: 'left bottom', 
+            2: 'center center',
+            3: 'center center',
+            4: 'center bottom',
+            5: 'center center',
+            6: 'center bottom',
+            7: 'left 76%',
+            8: 'left bottom',
+            9: 'left center',
+            10: '40% 40%',
+            11: 'right bottom',
+            12: 'right bottom',
+            13: 'right bottom',
+            14: 'right bottom',
+            15: 'right bottom',
+            16: 'left bottom',
+        }
 
-        $('.os-grid').css('background-image', `url("${img}")`)
+        // background: url('../assets/bg/1.jpeg') no-repeat left bottom;
+        // ./assets/bg/${pic + 1}.jpeg
+
+        $('.os-grid').css('background-image', `url("./assets/bg/${data.img}.jpeg")`)
+        $('.os-grid').css('background-position', imgConfig[data.img])
 
         $('.container-desktop').css('opacity', '0')
         setTimeout(()=>{
-            $('.container-desktop').css('background-image', `url("${img}")`)
+            $('.container-desktop').css('background-image', `url("./assets/bg/${data.img}.jpeg")`)
+            $('.container-desktop').css('background-position', imgConfig[data.img])
 
             setTimeout(()=>{
                 $('.container-desktop').css('opacity', '1')

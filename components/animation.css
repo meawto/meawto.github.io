@@ -125,24 +125,24 @@
     0% {
       transform: translateY(0rem);
       opacity: 0;
-      box-shadow: 0 0 30px transparent;
+      box-shadow: 0 0 1rem transparent;
     }
     20% {
         opacity: 0.1;
-        box-shadow: 0 0 44px 1px white;
+        box-shadow: 0 0 2.8rem 0.1rem rgba(255, 255, 255, 0.6);
     }
     50% {
         opacity: 0.3;
-        box-shadow: 0 0 30px 1px white;
+        box-shadow: 0 0 1.8rem 0.1rem rgba(255, 255, 255, 0.4);
     }
     70%{
         opacity: 0.1;
-        box-shadow: 0 0 44px 1px white;
+        box-shadow: 0 0 2.8rem 0.1rem rgba(255, 255, 255, 0.6);
     }
     100% {
       transform: translateY(36rem);
       opacity: 0;
-      box-shadow: 0 0 30px transparent;
+      box-shadow: 0 0 1rem transparent;
     }
 }
 
