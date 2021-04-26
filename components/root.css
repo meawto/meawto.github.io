@@ -47,7 +47,7 @@
     --dock-shadow-v1: 0 0.4rem 2rem rgba(0, 0, 0, 0.6);
     --taskbar-v1: rgba(19, 19, 19, 0.2);
     --window-v1: rgb(28, 28, 28);
-    --window-shadow-v1: rgba(19, 19, 19, 0.6);
+    --window-shadow-v1: rgba(0, 0, 0, 0.8);
     --context-menu-item: rgba(255, 255, 255, 0.1);
 
     /* font color */
@@ -78,6 +78,10 @@ html {
     box-sizing: border-box;
     outline: none;
     user-select: none;
+}
+
+a:hover, button:hover, .closeWindowSPAN:hover, label:hover, .custom-cursor-hover:hover, .tb-glow:hover, .chat-choices:hover {
+    cursor: url('../assets/icons/hand.png'), auto!important;
 }
 
 a {
@@ -145,10 +149,10 @@ screen and (max-height: 580px) {
     }
 }
 
-@media screen and (max-width: 340px),
+@media screen and (max-width: 380px),
 screen and (max-height: 540px) {
      :root {
-        font-size: 8px;
+        font-size: 9px;
     }
 
     #os-dock button {
@@ -165,22 +169,22 @@ screen and (max-height: 540px) {
     }
 }
 
-@media screen and (max-width: 290px),
-screen and (max-height: 500px) {
+@media screen and (max-width: 320px),
+screen and (max-height: 570px) {
      :root {
-        font-size: 7px;
+        font-size: 8px;
     }
 
     #os-dock button {
-        width: 6rem;
-        height: 6rem;
+        width: 5rem;
+        height: 5rem;
     }
 
     #os-dock button img {
-        width: 5rem;
+        width: 4rem;
     }
 
     #os-taskbar {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 }

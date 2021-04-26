@@ -29,6 +29,8 @@ function OSFunctions() {
             $(".os-grid").css("animation", "gridOnLoad 2s forwards")
             setTimeout(() => {$("#on-load").css("display", "none")}, 1500)
         }
+        
+        setTimeout(() => {NOTOwb.openWindow('os-config', { a: 'os-config', b: 'os-config-appearance' })}, 800)
     }
 
     this.inputError = function(elem) {
@@ -108,10 +110,7 @@ $(window).load(function () {
         NOTOConfig.changeWallpaper({ img: $(this).attr('value') })
     })
 
-
-    // $('.container-desktop').css('background-image', `url("./assets/bg/${bgIndex[((Math.random() * bgIndex.length) | 0)+1]}.jpeg")`)
-    // NOTOConfig.changeWallpaper({ img: bgIndex[((Math.random() * bgIndex.length) | 0)+1] })
-    NOTOConfig.changeWallpaper({ img: bgIndex[Math.floor(Math.random() * bgIndex.length)] })
+    NOTOConfig.changeWallpaper({ img: bgIndex[Math.floor(Math.random() * bgIndex.length)] + 1 })
 
 
     $('#os-desktop').contextmenu(function(event) {

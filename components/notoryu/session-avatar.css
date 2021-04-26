@@ -22,7 +22,12 @@
     opacity: 0.8;
     object-fit: cover;
     transform: scale(0.74);
-    transition: transform 400ms, opacity 400ms;
+    transition: transform 200ms, opacity 50ms;
+}
+
+.avatar-choice-item img:hover {
+    opacity: 1;
+    transform: scale(0.8);
 }
 
 .session-avatar-choice [type=radio] {

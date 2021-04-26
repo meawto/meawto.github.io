@@ -6,7 +6,7 @@ function OsWindowBehavior() {
     // remove top 1s
     document.querySelectorAll('.os-window').forEach(item => {
         item.addEventListener('mousedown', () => {
-            item.style.transition = 'opacity 400ms, filter 400ms, box-shadow 200ms, transform 100ms'
+            item.style.transition = 'opacity 400ms, box-shadow 100ms, transform 100ms'
         })
     })
 
@@ -14,17 +14,20 @@ function OsWindowBehavior() {
     this.windowsJquery.forEach(window => {
         $(window).draggable({
             containment: "#os-desktop",
-            cursor: "crosshair",
+            // cursor: '-moz-grabbing',
+            // cursor: '-webkit-grabbing',
             cancel: '.iframe-overlay, .chat-input, .closeWindowSPAN, #chat-data, #os-config-wallpaper, .os-config-grid, .window-controls-name, .os-config-menu',
             start: function() {
                 $(this).css("transform", "scale(1.02)")
                 $(this).css("opacity", "0.8")
+                $(this).css("cursor", "url(./assets/icons/grabbing.png), auto")
                 $(".iframe-overlay").css("display", "block")
             },
             stop: function() {
                 $(this).css("transform", "scale(1)")
                 $(this).css("opacity", "1")
                 $(this).children(".iframe-container").children(".iframe-overlay").css("display", "none")
+                $(this).css("cursor", "url(./assets/icons/default-cursor.png), auto")
             }
         })
         $(window).css("top", this.desktopSize.offsetHeight)
@@ -44,7 +47,7 @@ function OsWindowBehavior() {
         $('#os-dock').find(`[data-window-name='${$(this).attr("id")}']`).css("background-color", "var(--dock-btn-v2)")
 
         $(this).css("z-index", "2")
-        $(this).css("filter", "grayscale(0)")
+        // $(this).css("filter", "grayscale(0)")
         $(this).css("box-shadow", "0 10px 30px var(--window-shadow-v1)")
         $(this).css("transform", "scale(1)")
         $(this).children(".iframe-container").children(".iframe-overlay").css("display", "none")
@@ -123,7 +126,7 @@ function OsWindowBehavior() {
     this.closeWindow = function(name) {
         let osWindow = document.getElementById(name)
 
-        osWindow.style.transition = 'opacity 400ms, top 1s ease, filter 400ms, box-shadow 200ms, transform 100ms'
+        osWindow.style.transition = 'opacity 400ms, top 1s ease, box-shadow 100ms, transform 100ms'
         osWindow.style.opacity = '0'
         osWindow.style.top = this.desktopSize.offsetHeight + 'px'
 

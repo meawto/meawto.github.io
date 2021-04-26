@@ -100,7 +100,7 @@
 }
 
 .appearance-choice-item {
-    background-color: var(--main-color2);
+    background-color: var(--window-v1);
     width: 100%;
     cursor: pointer;
     text-align: center;
