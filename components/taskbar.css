@@ -1,7 +1,8 @@
 #os-taskbar {
     backdrop-filter: blur(2.4rem);
-    background-color: var(--dock-v1);
-    padding: 0.4rem 1rem;
+    -webkit-backdrop-filter: blur(2.4rem);
+    background-color: var(--interface-color4);
+    padding: 0.28rem 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,7 +20,7 @@
 .tb-glow {
     cursor: pointer;
     display: flex;
-    color: white;
+    color: rgb(var(--interface-color5));
     opacity: 0.8;
     transition: opacity 200ms, letter-spacing 200ms ease, text-shadow 200ms;
     align-items: center;
@@ -29,7 +30,7 @@
 
 .tb-glow:hover {
     opacity: 1;
-    text-shadow: 0 0 0.4rem rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 0.4rem rgba(var(--interface-color5), 0.6);
 }
 
 .taskbar-info img {

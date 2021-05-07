@@ -10,13 +10,13 @@
     width: max-content;
     border-radius: 0.6rem 0.6rem 0 0;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.8);
-    background-color: var(--dock-v1);
+    box-shadow: 0 0 2rem var(--interface-color3);
+    background-color: var(--interface-color0);
     z-index: 3;
 }
 
 #os-dock button {
-    background-color: var(--dock-btn-v1);
+    background-color: var(--interface-color1);
     width: 3rem;
     height: 3rem;
     border-radius: 0.4rem;
@@ -27,7 +27,7 @@
     cursor: pointer;
     display: block;
     border-bottom: 0.2rem solid transparent;
-    transition: border-bottom 200ms, background-color 200ms;
+    transition: border-bottom 200ms, background-color 200ms, opacity 200ms;
 }
 
 #os-dock button:hover {

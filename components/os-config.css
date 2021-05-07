@@ -1,16 +1,25 @@
 #os-config {
     display: flex;
     flex-direction: column;
-    width: 40rem;
-    height: 30rem;
+    width: 38rem;
+    height: 46rem;
+    /* height: 30rem; */
     font-family: var(--second-font);
 }
+
+#os-config .window-controls .os-config-menu svg {
+    width: 1rem;
+    height: 1rem;
+    margin: auto;
+    margin-right: 0.4rem;
+    transition: width 500ms 100ms ease, margin-right 500ms 200ms ease;
+}
+
 
 .os-config-grid {
     background-color: var(--main-color1);
     display: flex;
     flex-direction: column;
-    border-radius: 0.4rem;
     overflow: hidden;
     height: 100%;
     position: relative;
@@ -38,24 +47,32 @@
     margin: 0 auto auto auto; 
     display: grid;
     grid-template-columns: 14rem 14rem;
-    grid-gap: 0.8rem;
+    grid-gap: 1rem 0.6rem;
 }
 
 .config-choice-item {
-    padding: 0.6rem 1.6rem;
-    border-radius: 0.2rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.4rem;
+    position: relative;
     cursor: pointer;
-    box-shadow: 0 0 0 0.1rem var(--main-color2);
-}
-
-.config-choice-item:hover {
     background-color: var(--main-color2);
-    box-shadow: 0 0 0 0.1rem var(--main-color5);
+    /* border: 0.2rem solid var(--main-color6); */
+
+    /* border-bottom: 0.4rem solid var(--main-color6);
+    box-shadow: 0 0 0 0.2rem var(--main-color6); */
+
+    border: 0.2rem solid var(--main-color5);
+    box-shadow: 0 0.4rem 0 0.0 var(--main-color5);
+
+    /* transition: background-color 100ms, box-shadow 100ms; */
+    /* box-shadow: 0 0 0 0.1rem var(--main-color2); */
 }
 
 .config-choice-item:active {
-    background-color: var(--main-color0);
-    box-shadow: 0 0 0 0.1rem var(--main-color3);
+    /* background-color: var(--main-color5);
+    box-shadow: 0 0 0 0.1rem var(--main-color6); */
+    top: 0.4rem;
+    box-shadow: 0 0 0 0.0 var(--main-color5);
 }
 
 .config-choice-item span:nth-child(1) {
@@ -83,6 +100,7 @@
     position: absolute;
     z-index: 1;
     width: 100%;
+    padding-top: 1rem;
 }
 
 #os-config-appearance .os-config-title {
@@ -100,7 +118,7 @@
 }
 
 .appearance-choice-item {
-    background-color: var(--window-v1);
+    background-color: var(--interface-color6);
     width: 100%;
     cursor: pointer;
     text-align: center;
@@ -128,11 +146,35 @@
     display: inline-block;
 }
 
+/* appearance item */
+.appearance-item {
+    display: flex;
+    background-color: var(--main-color2);
+    border-radius: 0.4rem;
+    margin: 0 1rem 1rem 1rem;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.appearance-container {
+    display: flex;
+    flex-direction: column;
+    /* margin-right: 2rem; */
+}
+
+.appearance-container span:nth-child(1) {
+    font-weight: 600;
+    color: var(--color-name);
+}
+
+.appearance-container span:nth-child(2) {
+    color: var(--color-sub-status);
+    font-size: 0.9rem;
+}
 
 
-
-
-#config-wallpaper {
+/* wallpaper config */
+#appearance-wallpaper {
     /* width: 100%;
     display: grid;
     grid-template-columns: auto auto;
@@ -144,13 +186,15 @@
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 1.4rem;
+    grid-gap: 0.4rem;
     overflow: auto;
-    padding: 2rem;
-    padding-right: 1.2rem;
+    /* padding: 0.4rem; */
+    padding-left: 0.875rem;
     overflow-x: hidden;
     position: relative;
     border-radius: 0.4rem 0 0 0.4rem;
+
+    scrollbar-color: var(--main-color2) var(--main-color1);
 }
 
 #config-theme {
@@ -162,13 +206,14 @@
 
 
 
-#config-wallpaper::-webkit-scrollbar {
+/* #config-wallpaper::-webkit-scrollbar {
     width: 0.8rem;
 }
 
 #config-wallpaper::-webkit-scrollbar-thumb {
-    background: var(--window-v1);
-}
+    background: var(--main-color5);
+} */
+
 
 .wallpaper-choice-item {
     cursor: pointer;
@@ -181,26 +226,26 @@
 }
 
 .wallpaper-choice-item img {
-    border-radius: 0.4rem;
+    border-radius: 0.34rem;
     width: 100%;
     height: 10rem;
     display: block;
     object-fit: cover;
     transform: scale(0.98);
     box-shadow: 0 0 0 0.1rem transparent;
-    opacity: 0.6;
+    opacity: 0.8;
     transition: box-shadow 200ms, opacity 200ms, transform 200ms;
 }
 
-#config-wallpaper [type=radio] {
+#appearance-wallpaper [type=radio] {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-#config-wallpaper [type=radio]:checked + img {
-    box-shadow: 0 0 0 0.1rem var(--main-color7);
+#appearance-wallpaper [type=radio]:checked + img {
+    box-shadow: 0 0 0 0.12rem var(--main-color7);
     opacity: 1;
 }
 
@@ -213,4 +258,56 @@
     height: 100%;
     display: none;
     position: absolute;
+}
+
+
+
+
+
+  
+  /* switch btn */
+.appearance-item-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.appearance-item-button input[type="checkbox"] {
+    cursor: pointer;
+    position: absolute;
+    height: 0;
+    width: 0;
+}
+
+.appearance-item-checkmark {
+    width: 3rem;
+    padding: 0.6rem 0;
+    text-align: center;
+
+    background-color: var(--main-color3);
+    border-radius: 0.55rem;
+
+    border: 0.2rem solid var(--main-color5);
+    box-shadow: 0 0.5rem 0 0.0 var(--main-color5);
+
+    color: var(--color-sub-status);
+    font-size: 0.8rem;
+    font-weight: 600;
+    position: relative;
+    top: -0.5rem;
+
+}
+
+.appearance-item-button input[type="checkbox"]:checked ~ .appearance-item-checkmark {
+    top: 0;
+    box-shadow: 0 0 0 0.0 var(--main-color5);
+    /* background-color: var(--main-color1); */
+}
+
+.appearance-item-checkmark:after {
+    content: "OFF";
+}
+
+.appearance-item-button input[type="checkbox"]:checked ~ .appearance-item-checkmark:after {
+    content: "ON";
 }

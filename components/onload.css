@@ -45,7 +45,7 @@
     font-size: 1rem;
     padding: 1rem 2rem;
     font-family: var(--main-font);
-    color: var(--color-name);
+    color: rgb(190, 190, 190);
     position: relative;
     font-weight: 600;
     top: 16rem;
@@ -54,9 +54,10 @@
 }
 
 #on-load form input[type="text"]::placeholder {
-    color: var(--color-sub-status);
+    color: rgb(190, 190, 190);
     transition: color 400ms;
     font-size: 1rem;
+    font-weight: 400;
 }
 
 #on-load form input[type="text"]:focus::placeholder {
@@ -66,7 +67,7 @@
 #btn-session-start {
     background: transparent;
     width: max-content;
-    color: var(--color-sub-status);
+    color: rgb(130, 130, 130);
     letter-spacing: 0.1rem;
     text-shadow: 0 0 1.6rem transparent;
     transition: letter-spacing 200ms, color 800ms, text-shadow 600ms 200ms ease, top 1s ease, opacity 800ms;

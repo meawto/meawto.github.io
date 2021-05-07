@@ -2,7 +2,7 @@ var elemDatetime = document.getElementById('os-datetime')
 function OSFunctions() {
 
     this.session_username
-    this.session_avatar = './assets/korona.gif'
+    this.session_avatar = 'https://cdn.discordapp.com/attachments/804066268831154186/838203362335653888/korona.gif'
     this.windowReady
 
     this.osDateNow = function () {
@@ -30,7 +30,7 @@ function OSFunctions() {
             setTimeout(() => {$("#on-load").css("display", "none")}, 1500)
         }
         
-        setTimeout(() => {NOTOwb.openWindow('os-config', { a: 'os-config', b: 'os-config-appearance' })}, 800)
+        setTimeout(() => {NOTOwb.openWindow('os-config', { a: 'os-config', b: 'os-config-appearance' })}, 1200)
     }
 
     this.inputError = function(elem) {
@@ -101,16 +101,34 @@ $(window).load(function () {
         NotoOS.session_avatar = el.target.getAttribute('value')
     })
 
+
+
+    // start appearance config
+
     bgIndex = [...Array(16).keys()]
     bgIndex.forEach(pic => {
-        $('#config-wallpaper').append(`<label class="wallpaper-choice-item"> <input tabindex="-1" type="radio" name="config-wallpaper-choice" value="${pic + 1}"> <img src="./assets/bg/${pic + 1}.jpeg"> </label>`)
+        $('#appearance-wallpaper').append(`<label class="wallpaper-choice-item"> <input tabindex="-1" type="radio" name="appearance-wallpaper-choice" value="${pic + 1}"> <img src="./assets/bg/${pic + 1}.jpeg"> </label>`)
     });
 
-    $('input[name="config-wallpaper-choice"]').click(function() {
+    $('input[name="appearance-wallpaper-choice"]').click(function() {
         NOTOConfig.changeWallpaper({ img: $(this).attr('value') })
     })
 
     NOTOConfig.changeWallpaper({ img: bgIndex[Math.floor(Math.random() * bgIndex.length)] + 1 })
+
+    $('.appearance-item-button').change(function() {
+        switch ($(this).data('config-id')) {
+            case 1:
+                NOTOConfig.changeTheme($(this).find('input').is(":checked"))
+                break
+            case 2:
+                NOTOConfig.changePerformance()
+                break
+        }
+    })
+
+    // end appearance config
+
 
 
     $('#os-desktop').contextmenu(function(event) {
@@ -120,13 +138,13 @@ $(window).load(function () {
             let desktopSize = [$('#os-desktop').outerWidth(), $('#os-desktop').outerHeight()]
             let menu_position = [event.pageX - this.offsetLeft, event.pageY - this.offsetTop]
             
-            if ((menu_position[0] + $('#desktop-context-menu').outerWidth()) > desktopSize[0]) {
+            if ((menu_position[0] + $('#desktop-context-menu').outerWidth()) > desktopSize[0] - 20) {
                 $('#desktop-context-menu').css('left', (desktopSize[0] - $('#desktop-context-menu').outerWidth() - 8))
             } else {
                 $('#desktop-context-menu').css('left', menu_position[0] + 12)
             }
             
-            if ((menu_position[1] + $('#desktop-context-menu').outerHeight()) > desktopSize[1]) {
+            if ((menu_position[1] + $('#desktop-context-menu').outerHeight()) > desktopSize[1] - 20) {
                 $('#desktop-context-menu').css('top', (desktopSize[1] - $('#desktop-context-menu').outerHeight() - 8))
             } else {
                 $('#desktop-context-menu').css('top', menu_position[1] + 12)

@@ -106,7 +106,7 @@
 /* input animations */
 @keyframes inputErrorAnim {
     from {
-        background: rgba(255, 0, 0, 0.1);
+        background: rgba(255, 0, 0, 0.16);
         box-shadow: 0 0 2rem rgba(255, 0, 0, 0.08);
     }
     to {

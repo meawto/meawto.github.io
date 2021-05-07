@@ -7,18 +7,16 @@
     background-color: var(--main-color1);
     overflow: auto;
     overflow-x: hidden;
+    scrollbar-color: var(--main-color2) var(--main-color1);
 }
 
-#chat-data::-webkit-scrollbar {
-    width: 0.6rem;
+/* #chat-data::-webkit-scrollbar {
+    width: 0.8rem;
 }
 
-#chat-data::-webkit-scrollbar-track {
-    background: var(--main-color1);
-}
 #chat-data::-webkit-scrollbar-thumb {
-    background: var(--main-color2);
-}
+    background: var(--main-color5);
+} */
 
 #chat-data .message-wrapper-container:last-child {
     margin-bottom: 2.2rem;
@@ -67,6 +65,7 @@
     word-break: break-word;
     font-size: 1rem;
     user-select: text;
+    cursor: text;
     white-space: pre-wrap;
 }
 
@@ -91,7 +90,7 @@
     overflow: hidden;
 }
 
-#chat-data-welcome img:nth-child(1) {
+#chat-data-welcome svg:nth-child(1) {
     width: 6rem;
     opacity: 0.8;
     display: block;

@@ -2,157 +2,199 @@
 <html lang="pt-BR">
 
 <head>
-    <title>NOTO</title>
-    <link rel="icon" type="image/png" href="./assets/icons/lua2.svg"/>
+  <title>NOTO</title>
+  <link rel="icon" type="image/png" href="./assets/icons/lua2.svg" />
 
-    <!-- meta tags [start] -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="meawto's portfolio">
-    <meta name="description" content="simulating the interface of an operating system with web technologies (this is to be a portfolio)">
-    <meta name="theme-color" content="#2f3136">
+  <!-- meta tags [start] -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="meawto's portfolio">
+  <meta name="description"
+    content="simulating the interface of an operating system with web technologies (this is to be a portfolio)">
+  <meta name="theme-color" content="#2f3136">
 
-    <!-- open graph / facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://meawto.github.io/">
-    <meta property="og:title" content="meawto's portfolio">
-    <meta property="og:description" content="simulating the interface of an operating system with web technologies (this is to be a portfolio)">
-    <meta property="og:image" content="https://data.whicdn.com/images/329013573/original.gif">
+  <!-- open graph / facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://meawto.github.io/">
+  <meta property="og:title" content="meawto's portfolio">
+  <meta property="og:description"
+    content="simulating the interface of an operating system with web technologies (this is to be a portfolio)">
+  <meta property="og:image" content="https://data.whicdn.com/images/329013573/original.gif">
 
-    <!-- twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://meawto.github.io/">
-    <meta property="twitter:title" content="meawto's portfolio">
-    <meta property="twitter:description" content="simulating the interface of an operating system with web technologies (this is to be a portfolio)">
-    <meta property="twitter:image" content="https://data.whicdn.com/images/329013573/original.gif">
-    <!-- meta tags [end] -->
+  <!-- twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://meawto.github.io/">
+  <meta property="twitter:title" content="meawto's portfolio">
+  <meta property="twitter:description"
+    content="simulating the interface of an operating system with web technologies (this is to be a portfolio)">
+  <meta property="twitter:image" content="https://data.whicdn.com/images/329013573/original.gif">
+  <!-- meta tags [end] -->
 
 
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;600;800&family=Spartan:wght@100;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;600;800&family=Spartan:wght@100;400;600;700;800&display=swap"
+    rel="stylesheet">
 
-    <!-- local css -->
-    <link rel="stylesheet" href="./components/root.css">
+  <!-- local css -->
+  <link rel="stylesheet" href="./components/root.css">
 
-    <!-- jquery cdn -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </head>
 
 <body>
 
-    <div id="on-load">
-        <div class="breath-animation">
-            <img src="./assets/icons/lua.svg" alt="Notoryu logo">
-            <form id="on-load-form">
-                <input type="text" placeholder="como devo chamar você?" id="session-username" spellcheck="false">
-                <button id="btn-session-start">começar</button>
-            </form>
-            <div class="on-load-rain">
-                <div id="on-load-rain-particles"></div>
-            </div>
-        </div>
+  <div id="on-load">
+    <div class="breath-animation">
+      <img src="./assets/icons/lua.svg" alt="Notoryu logo">
+      <form id="on-load-form">
+        <input type="text" placeholder="como devo chamar você?" id="session-username" spellcheck="false">
+        <button id="btn-session-start">começar</button>
+      </form>
+      <div class="on-load-rain">
+        <div id="on-load-rain-particles"></div>
+      </div>
     </div>
+  </div>
 
-    <div class="os-grid">
+  <div class="os-grid">
 
-        <div class="container-desktop">
+    <div class="container-desktop">
 
-            <div id="os-taskbar">
-                <div class="taskbar-apps">
-                    <span class="tb-glow">iniciar</span>
+      <div id="os-taskbar">
+        <div class="taskbar-apps">
+          <span class="tb-glow">iniciar</span>
+        </div>
+        <div class="taskbar-time">
+          <span id="os-datetime" class="tb-glow">data aqui</span>
+        </div>
+        <div class="taskbar-info">
+          <span id="os-datetime" class="tb-glow">opções</span>
+        </div>
+      </div>
+
+      <div id="os-desktop">
+
+        <div id="desktop-context-menu">
+          <div class="context-menu-item custom-cursor-hover context-menu-window" data-window-name="os-config">
+            <span>mudar plano de fundo</span>
+          </div>
+          <div class="context-menu-item custom-cursor-hover" onclick="alert('bom dia')">
+            <span>bom dia</span>
+          </div>
+        </div>
+
+
+        <div id="os-config" class="os-window">
+          <div class="window-controls">
+            <span class="os-config-menu" data-config-name="os-config-appearance">
+              <svg version="1.1" viewBox="0 0 3.8731484 2.9105814" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <metadata>
+                <rdf:RDF>
+                <cc:Work rdf:about="">
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+                <dc:title/>
+                </cc:Work>
+                </rdf:RDF>
+                </metadata>
+                <g transform="translate(-95.135 -142.58)">
+                <g fill="#fff" stroke-width="0">
+                <path transform="scale(.26458)" d="m360.06 543.89-0.4961 0.49609 0.4961 0.50196v2e-3h14.143v-1z"/>
+                <path d="m95.266 143.91 1.323-1.323 0.18709 0.18709-1.323 1.323z"/>
+                <path d="m95.266 144.17 1.323 1.323 0.18709-0.18709-1.323-1.323z"/>
+                </g>
+                </g>
+              </svg>
+              configurações
+            </span>
+            <span class="closeWindowSPAN" data-window-name="os-config">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8.70711 8.00001L13.3536 3.35356L12.6465 2.64645L8.00001 7.2929L3.35356 2.64645L2.64645 3.35356L7.2929 8.00001L2.64645 12.6465L3.35356 13.3536L8.00001 8.70711L12.6465 13.3536L13.3536 12.6465L8.70711 8.00001Z"
+                  fill="#FFFFFF"></path>
+              </svg>
+            </span>
+          </div>
+
+          <div class="os-config-grid">
+
+            <div id="os-config-choice">
+              <span class="os-config-title">configurações do sistema</span>
+              <div class="config-choices-container">
+                <div class="config-choice-item" data-config-name="os-config-appearance">
+                  <span>aparência</span>
+                  <span>papel de parede e tema</span>
                 </div>
-                <div class="taskbar-time">
-                    <span id="os-datetime" class="tb-glow">data aqui</span>
+                <div class="config-choice-item" data-config-name="">
+                  <span>opção</span>
+                  <span>descrição da opção aqui</span>
                 </div>
-                <div class="taskbar-info">
-                    <span id="os-datetime" class="tb-glow">opções</span>
+                <div class="config-choice-item" data-config-name="">
+                  <span>opção</span>
+                  <span>descrição da opção aqui</span>
                 </div>
+                <div class="config-choice-item" data-config-name="">
+                  <span>opção</span>
+                  <span>descrição da opção aqui</span>
+                </div>
+              </div>
             </div>
 
-            <div id="os-desktop">
 
-                <div id="desktop-context-menu">
-                    <div class="context-menu-item custom-cursor-hover context-menu-window" data-window-name="os-config">
-                        <span>mudar plano de fundo</span>
-                    </div>
-                    <div class="context-menu-item custom-cursor-hover" onclick="alert('bom dia')">
-                        <span>bom dia</span>
-                    </div>
+            <div id="os-config-appearance">
+
+              <div class="appearance-item">
+                <div class="appearance-container">
+                  <span>
+                    modo escuro
+                  </span>
+                  <span>
+                    por padrão, o modo escuro é o escolhido. você pode mudar isso
+                  </span>
                 </div>
+                <label class="appearance-item-button" data-config-id="1">
+                  <input type="checkbox" checked>
+                  <span class="appearance-item-checkmark"></span>
+                </label>
+              </div>
 
-
-                <div id="os-config" class="os-window">
-                    <div class="window-controls">
-                        <span class="window-controls-name custom-cursor-hover">configurações</span>
-                        <span class="closeWindowSPAN" data-window-name="os-config">
-                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.70711 8.00001L13.3536 3.35356L12.6465 2.64645L8.00001 7.2929L3.35356 2.64645L2.64645 3.35356L7.2929 8.00001L2.64645 12.6465L3.35356 13.3536L8.00001 8.70711L12.6465 13.3536L13.3536 12.6465L8.70711 8.00001Z" fill="#FFFFFF"></path></svg>
-                        </span>
-                    </div>
-
-                    <div class="os-config-grid">
-                        
-                        <div id="os-config-choice">
-                            <span class="os-config-title">configurações do sistema</span>
-                            <div class="config-choices-container">
-                                <div class="config-choice-item" data-config-name="os-config-appearance">
-                                    <span>aparência</span>
-                                    <span>papel de parede e tema</span>
-                                </div>
-                                <div class="config-choice-item" data-config-name="">
-                                    <span>opção</span>
-                                    <span>descrição da opção aqui</span>
-                                </div>
-                                <div class="config-choice-item" data-config-name="">
-                                    <span>opção</span>
-                                    <span>descrição da opção aqui</span>
-                                </div>
-                                <div class="config-choice-item" data-config-name="">
-                                    <span>opção</span>
-                                    <span>descrição da opção aqui</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                        <div id="os-config-appearance">
-
-                            <div class="config-appearance-choice">
-                                <div class="appearance-choice-item custom-cursor-hover" data-appearance-choice="config-wallpaper;config-theme">
-                                    <span class="appearance-item-span">plano de fundo</span>
-                                </div>
-                                <div class="appearance-choice-item custom-cursor-hover" data-appearance-choice="config-theme;config-wallpaper">
-                                    <span class="appearance-item-span">tema</span>
-                                </div>
-                            </div>
-
-                            <div id="config-theme">
-                                nadaaa aa a anadaaa aa a anadaaa aa a a
-                            </div>
-
-                            <div id="config-wallpaper">
-                                <!-- imgs -->
-                            </div>   
-                        </div>
-                    </div>
-
-                    <div class="window-controls" id="config-choice-title">
-                        <span class="window-controls-name custom-cursor-hover">aparência do sistema</span>
-                        <span class="os-config-menu" data-config-name="os-config-appearance">
-                            início
-                        </span>
-                        <div class="config-choice-title-overlay"></div>
-                    </div>
-
-                    <!-- <div id="config-choice-title">
-                        <span>aparência do sistema</span>
-                        <span class="os-config-menu" data-config-name="os-config-appearance">início</span>
-                    </div> -->
+              <div class="appearance-item">
+                <div class="appearance-container">
+                  <span>
+                    modo desempenho
+                  </span>
+                  <span>
+                    é possível melhorar o desempenho geral ativando esta opção
+                  </span>
                 </div>
+                <label class="appearance-item-button" data-config-id="2">
+                  <input type="checkbox">
+                  <span class="appearance-item-checkmark"></span>
+                </label>
+              </div>
 
-                <!-- <div id="noto-browser" class="os-window">
+
+              <div id="appearance-wallpaper">
+                <!-- imgs -->
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="window-controls" id="config-choice-title">
+            <span class="window-controls-name custom-cursor-hover">aparência do sistema</span>
+            <span class="os-config-menu" data-config-name="os-config-appearance">
+              início
+            </span>
+            <div class="config-choice-title-overlay"></div>
+          </div> -->
+        </div>
+
+        <!-- <div id="noto-browser" class="os-window">
                     <div class="window-controls">
                         <span>Browser</span>
                         <span class="closeWindowSPAN" data-window-name="noto-browser">fechar</span>
@@ -163,153 +205,178 @@
                     </div>
                 </div> -->
 
-                <div id="music-player" class="os-window">
-                    <div class="window-controls">
-                        <span class="window-controls-name custom-cursor-hover">playlist</span>
-                        <span class="closeWindowSPAN" data-window-name="music-player">
-                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.70711 8.00001L13.3536 3.35356L12.6465 2.64645L8.00001 7.2929L3.35356 2.64645L2.64645 3.35356L7.2929 8.00001L2.64645 12.6465L3.35356 13.3536L8.00001 8.70711L12.6465 13.3536L13.3536 12.6465L8.70711 8.00001Z" fill="#FFFFFF"></path></svg>
-                        </span>
-                    </div>
+        <div id="music-player" class="os-window">
+          <div class="window-controls">
+            <span class="window-controls-name custom-cursor-hover">playlist</span>
+            <span class="closeWindowSPAN" data-window-name="music-player">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8.70711 8.00001L13.3536 3.35356L12.6465 2.64645L8.00001 7.2929L3.35356 2.64645L2.64645 3.35356L7.2929 8.00001L2.64645 12.6465L3.35356 13.3536L8.00001 8.70711L12.6465 13.3536L13.3536 12.6465L8.70711 8.00001Z"
+                  fill="#FFFFFF"></path>
+              </svg>
+            </span>
+          </div>
 
-                    <div class="iframe-container">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLssT18uvyaNgjzUx6jX4H_g9Dmtn18xd-" frameborder="0" allow="accelerometer; encrypted-media;">
-                        </iframe>
-                        <div class="iframe-overlay"></div>
-                    </div>
-
-                </div>
-
-                <div id="notoryu-app" class="os-window">
-                    <div class="window-controls">
-                        <span class="window-controls-name custom-cursor-hover">notoryu app</span>
-                        <span class="closeWindowSPAN" data-window-name="notoryu-app">
-                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.70711 8.00001L13.3536 3.35356L12.6465 2.64645L8.00001 7.2929L3.35356 2.64645L2.64645 3.35356L7.2929 8.00001L2.64645 12.6465L3.35356 13.3536L8.00001 8.70711L12.6465 13.3536L13.3536 12.6465L8.70711 8.00001Z" fill="#FFFFFF"></path></svg>
-                        </span>
-                    </div>
-
-                    <div class="notoryu-grid">
-                        <div class="chat-info">
-                            <div class="user-avatar">
-                                <img src="https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4" alt="Avatar do meawto">
-                            </div>
-
-                            <div class="user-info">
-                                <span>meawto</span>
-                                <span>disponível</span>
-                            </div>
-                        </div>
-                        <div id="chat-data">
-
-                            <div id="chat-data-welcome">
-
-                                <img src="./assets/icons/lua.svg" alt="notoryu logo">
-
-                                <div class="welcome-span">
-                                    <span>fico feliz em ver você por aqui</span>
-                                    <span>para prosseguir, escolha seu avatar e o que deseja perguntar</span>
-                                </div>
-
-                                <div class="session-avatar-choice">
-                                    <label class="avatar-choice-item">
-                                        <input type="radio" name="notoryu-session-avatar-choice" value="https://cdn.discordapp.com/attachments/428664245295513602/802294437950521364/succ.gif">
-                                        <img src="https://cdn.discordapp.com/attachments/428664245295513602/802294437950521364/succ.gif">
-                                    </label>
-
-                                    <label class="avatar-choice-item">
-                                        <input type="radio" name="notoryu-session-avatar-choice" value="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
-                                        <img src="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
-                                    </label>
-
-                                    <label class="avatar-choice-item">
-                                        <input type="radio" name="notoryu-session-avatar-choice" value="./assets/korona.gif" checked>
-                                        <img src="./assets/korona.gif">
-                                    </label>
-
-                                    <label class="avatar-choice-item">
-                                        <input type="radio" name="notoryu-session-avatar-choice" value="https://cdn.discordapp.com/attachments/429362842890665986/802516930833154049/image0.png">
-                                        <img src="https://cdn.discordapp.com/attachments/429362842890665986/802516930833154049/image0.png">
-                                    </label>
-
-                                    <label class="avatar-choice-item">
-                                        <input type="radio" name="notoryu-session-avatar-choice" value="https://cdn.discordapp.com/attachments/428664245295513602/802295833541607424/a.gif">
-                                        <img src="https://cdn.discordapp.com/attachments/428664245295513602/802295833541607424/a.gif">
-                                    </label>
-                                </div>
-                
-
-                            </div>
-
-                        </div>
-                        <div class="chat-input">
-                            <div class="chat-input-container">
-                                <div class="chat-choices-container">
-                                    <span class="chat-choices" data-choice-id="0">
-                                        oi
-                                    </span>
-                                    <span class="chat-choices" data-choice-id="1">
-                                        sobre
-                                    </span>
-                                    <span class="chat-choices" data-choice-id="2">
-                                        experiencia
-                                    </span>
-                                    <span class="chat-choices" data-choice-id="3">
-                                        conhecimentos
-                                    </span>
-                                    <span class="chat-choices" data-choice-id="4">
-                                        contato
-                                    </span>
-                                    <span class="chat-choices" data-choice-id="5">
-                                        café
-                                    </span>
-                                    <span class="chat-choices" data-choice-id="6">
-                                        hentai
-                                    </span>
-                                    <span class="chat-choices" data-choice-id="7">
-                                        recomendações
-                                    </span>
-                                    <span class="chat-choices" data-choice-id="8">
-                                        doações
-                                    </span>
-                                </div>
-                                <div id="input-user-message">
-                                    <div></div>
-                                    <span id="input-blinking-cursor"></span>
-                                </div>
-                            </div>
-                            
-                            <div id="meaw-is-typing">
-                                <img src="https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4">
-                                <span>meawto</span>
-                                <span>está digitando...</span>
-                            </div>
-
-                            <span class="chat-emotes"><img class="custom-cursor-hover" src="./assets/emotes/ghost.png" alt="Emotes"></span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div id="os-dock">
-                <button class="os-dock-button" data-window-name="noto-browser"><img src="./assets/icons/lua2.svg" alt="noto browser"></button>
-                <button class="os-dock-button"><img src="./assets/icons/file-manager.png" alt="file manager"></button>
-                <button class="os-dock-button" data-window-name="notoryu-app"><img src="./assets/icons/lua.svg" alt="notoryu app"></button>
-                <button class="os-dock-button" data-window-name="music-player"><img src="./assets/icons/music.webp" alt="music player"></button>
-            </div>
+          <div class="iframe-container">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLssT18uvyaNgjzUx6jX4H_g9Dmtn18xd-"
+              frameborder="0" allow="accelerometer; encrypted-media;">
+            </iframe>
+            <div class="iframe-overlay"></div>
+          </div>
 
         </div>
 
+        <div id="notoryu-app" class="os-window">
+          <div class="window-controls">
+            <span class="window-controls-name custom-cursor-hover">notoryu app</span>
+            <span class="closeWindowSPAN" data-window-name="notoryu-app">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8.70711 8.00001L13.3536 3.35356L12.6465 2.64645L8.00001 7.2929L3.35356 2.64645L2.64645 3.35356L7.2929 8.00001L2.64645 12.6465L3.35356 13.3536L8.00001 8.70711L12.6465 13.3536L13.3536 12.6465L8.70711 8.00001Z"
+                  fill="#FFFFFF"></path>
+              </svg>
+            </span>
+          </div>
+
+          <div class="notoryu-grid">
+            <div class="chat-info">
+              <div class="user-avatar">
+                <img
+                  src="https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4"
+                  alt="Avatar do meawto">
+              </div>
+
+              <div class="user-info">
+                <span>meawto</span>
+                <span>disponível</span>
+              </div>
+            </div>
+            <div id="chat-data">
+
+              <div id="chat-data-welcome">
+
+                <!-- <img src="./assets/icons/lua.svg" alt="notoryu logo"> -->
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="127.04469087723552 127.12371477046185 428.82671498340653 364.1699229834938">
+                  <path d="M543.44 335.59C508.72 449.39 388.14 513.59 274.34 478.87C199.27 455.96 145.78 395.69 128.04 324.65C153.33 352.71 186.32 374.48 225.05 386.29C338.85 421.02 459.43 356.82 494.16 243.02C505.97 204.29 506.33 164.77 497.17 128.12C546.21 182.5 566.35 260.52 543.44 335.59Z" id="a6sy7z0Mrw"></path>
+                </svg>
+
+                <div class="welcome-span">
+                  <span>fico feliz em ver você por aqui</span>
+                  <span>para prosseguir, escolha seu avatar e o que deseja perguntar</span>
+                </div>
+
+                <div class="session-avatar-choice">
+                  <label class="avatar-choice-item">
+                    <input type="radio" name="notoryu-session-avatar-choice"
+                      value="https://cdn.discordapp.com/attachments/428664245295513602/802294437950521364/succ.gif">
+                    <img src="https://cdn.discordapp.com/attachments/428664245295513602/802294437950521364/succ.gif">
+                  </label>
+
+                  <label class="avatar-choice-item">
+                    <input type="radio" name="notoryu-session-avatar-choice"
+                      value="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
+                    <img src="https://cdn.discordapp.com/attachments/428664245295513602/802297781406400582/linus.jpg">
+                  </label>
+
+                  <label class="avatar-choice-item">
+                    <input type="radio" name="notoryu-session-avatar-choice"
+                      value="https://cdn.discordapp.com/attachments/804066268831154186/838203362335653888/korona.gif"
+                      checked>
+                    <img src="https://cdn.discordapp.com/attachments/804066268831154186/838203362335653888/korona.gif">
+                  </label>
+
+                  <label class="avatar-choice-item">
+                    <input type="radio" name="notoryu-session-avatar-choice"
+                      value="https://cdn.discordapp.com/attachments/429362842890665986/802516930833154049/image0.png">
+                    <img src="https://cdn.discordapp.com/attachments/429362842890665986/802516930833154049/image0.png">
+                  </label>
+
+                  <label class="avatar-choice-item">
+                    <input type="radio" name="notoryu-session-avatar-choice"
+                      value="https://cdn.discordapp.com/attachments/804066268831154186/838203360737886248/shiny.gif">
+                    <img src="https://cdn.discordapp.com/attachments/804066268831154186/838203360737886248/shiny.gif">
+                  </label>
+                </div>
+
+
+              </div>
+
+            </div>
+            <div class="chat-input">
+              <div class="chat-input-container">
+                <div class="chat-choices-container">
+                  <span class="chat-choices" data-choice-id="0">
+                    oi
+                  </span>
+                  <span class="chat-choices" data-choice-id="1">
+                    sobre
+                  </span>
+                  <span class="chat-choices" data-choice-id="2">
+                    experiencia
+                  </span>
+                  <span class="chat-choices" data-choice-id="3">
+                    conhecimentos
+                  </span>
+                  <span class="chat-choices" data-choice-id="4">
+                    contato
+                  </span>
+                  <span class="chat-choices" data-choice-id="5">
+                    café
+                  </span>
+                  <span class="chat-choices" data-choice-id="6">
+                    hentai
+                  </span>
+                  <span class="chat-choices" data-choice-id="7">
+                    recomendações
+                  </span>
+                  <span class="chat-choices" data-choice-id="8">
+                    doações
+                  </span>
+                </div>
+                <div id="input-user-message">
+                  <div></div>
+                  <span id="input-blinking-cursor"></span>
+                </div>
+              </div>
+
+              <div id="meaw-is-typing">
+                <img
+                  src="https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4">
+                <span>meawto</span>
+                <span>está digitando...</span>
+              </div>
+
+              <span class="chat-emotes"><img class="custom-cursor-hover" src="./assets/emotes/ghost.png"
+                  alt="Emotes"></span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="os-dock">
+        <button class="os-dock-button" data-window-name="noto-browser"><img src="./assets/icons/lua2.svg"
+            alt="noto browser"></button>
+        <button class="os-dock-button"><img src="./assets/icons/file-manager.png" alt="file manager"></button>
+        <button class="os-dock-button" data-window-name="notoryu-app"><img src="./assets/icons/lua.svg"
+            alt="notoryu app"></button>
+        <button class="os-dock-button" data-window-name="music-player"><img src="./assets/icons/music.webp"
+            alt="music player"></button>
+      </div>
+
     </div>
 
+  </div>
 
-    <!-- local js -->
-    <script src="./window.js"></script>
-    <script src="./load_os.js"></script>
-    <script src="./rain.js"></script>
-    <script src="./notoryu.js"></script>
-    <script src="./os_config.js"></script>
+
+  <!-- local js -->
+  <script src="./window.js"></script>
+  <script src="./load_os.js"></script>
+  <script src="./rain.js"></script>
+  <script src="./notoryu.js"></script>
+  <script src="./os_config.js"></script>
 
 
 </body>

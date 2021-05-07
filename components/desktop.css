@@ -6,7 +6,8 @@
 }
 
 .os-window {
-    background-color: var(--window-v1);
+    background-color: var(--interface-color6);
+    /* background-color: red; */
     width: max-content;
     height: max-content;
     border-radius: 0.4rem;
@@ -28,6 +29,7 @@
 .window-controls {
     display: flex;
     flex-direction: row;
+    padding: 0.4rem 0.2rem;
     justify-content: space-between;
     opacity: 1;
     transition: opacity 1s;
@@ -35,7 +37,7 @@
 
 .window-controls span {
     opacity: 0.6;
-    margin: 0.4rem 0.24rem;
+    /* margin: 0.4rem 0.24rem; */
     display: flex;
     font-weight: 600;
     align-items: center;
@@ -47,7 +49,7 @@
 }
 
 .window-controls span:nth-child(1) {
-    padding: 0 0.8rem;
+    padding: 0 0.6rem;
 }
 
 .closeWindowSPAN {
@@ -89,7 +91,7 @@
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
-    border-radius: 0 0 0.4rem 0.4rem;
+    border-radius: 0.28rem;
     overflow: hidden;
 }
 
@@ -104,35 +106,36 @@
 /* context menu */
 
 #desktop-context-menu {
-    background-color: var(--dock-v1);
     display: flex;
     flex-direction: column;
     width: max-content;
     padding: 0 0;
     font-family: var(--second-font);
+    background-color: var(--interface-color8);
     overflow: hidden;
     border-radius: 0.3rem;
     backdrop-filter: blur(10px);
     z-index: -1;
     opacity: 0;
     position: absolute;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    /* border: 0.1rem solid var(--context-menu-item); */
-    border-left: 0.2rem solid rgba(194, 194, 194, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* border: 0.1rem solid var(--interface-color8); */
+    border-left: 0.2rem solid var(--interface-color10);
     transition: top 200ms, left 200ms, opacity 400ms;
 }
 
 .context-menu-item {
     cursor: pointer;
+    transition: opacity 120ms ease;
     padding: 0.4rem 1.6rem;
-    color: var(--color-name);
+    color: var(--interface-color9);
+    background-color: var(--interface-color8);
 }
 
-.context-menu-item:hover {
-    background-color: var(--context-menu-item);
-    color: white;
+.context-menu-item:not(:hover) {
+    opacity: 0.6;
 }
 
 .context-menu-item:active {
-    background-color: var(--dock-btn-v2);
+    opacity: 0.4;
 }
